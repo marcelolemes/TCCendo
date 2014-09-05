@@ -3,13 +3,14 @@ package br.com.login.bean;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import br.com.login.Dao.UserDao;
 import br.com.login.model.User;
 
 @ManagedBean(name = "userBean")
-@RequestScoped
+@SessionScoped
 public class UserBean {
 
 	public UserBean() {
@@ -33,6 +34,12 @@ public class UserBean {
 		this.user = user;
 	}
 
+	public String atualizar() throws Exception {
+		UserDao userDao = new UserDao();
+		userLogado = userDao.atualizar(userLogado);
+		return "result.xhtml";
+	}
+
 	public String logar() throws Exception {
 		UserDao userDao = new UserDao();
 
@@ -41,8 +48,7 @@ public class UserBean {
 			setSessao(user.getApelido());
 			sessao = user.getApelido();
 
-			messageSucessoLogin();
-			return "result.xhtml";
+			return messageSucessoLogin();
 
 		} else {
 			System.out.print("Não encontrado");
@@ -51,22 +57,27 @@ public class UserBean {
 		return null;
 	}
 
-	public void gravar() {
+	public String gravar() {
 		UserDao userDao = new UserDao();
 		try {
-			userDao.Gravar(user);
-			messageSucessoGravar();
+			if (userDao.Gravar(user)) {
+				messageSucessoGravar();
+			}
+			return sairSessao();
+
 		} catch (Exception ex) {
 			messageErroLogin();
+			return null;
 		}
 
 	}
 
-	public void messageSucessoLogin() {
+	public String messageSucessoLogin() {
 		FacesContext.getCurrentInstance().addMessage(
 				null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Login",
 						"Seja bem vindo " + sessao));
+		return "result.xhtml";
 
 	}
 
@@ -77,7 +88,6 @@ public class UserBean {
 						"Cadastro realizado com sucesso, Seja bem vindo "
 								+ sessao));
 
-		fecharSessao();
 	}
 
 	public void fecharSessao() {
@@ -86,6 +96,7 @@ public class UserBean {
 				.remove("userBean");
 
 	}
+
 	public String sairSessao() {
 		// remover sessão do manage bean selecionado
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()

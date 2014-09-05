@@ -78,49 +78,53 @@
   <path value="C:/Users/marcelo/workspace/TCC/WebContent/WEB-INF/lib/hibernate-commons-annotations-4.0.4.Final.jar"/>
  </paths>
  <validation>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.jsf.core"/>
   <el>
    <linked-el length="25" name="%0" offset="945" path="%1"/>
    <linked-el length="27" name="%0" offset="855" path="%1"/>
-   <linked-el length="25" name="%0" offset="912" path="%2"/>
-   <linked-el length="41" name="%0" offset="890" path="%3"/>
-   <linked-el length="38" name="%0" offset="779" path="%3"/>
-   <linked-el length="27" name="%0" offset="822" path="%2"/>
+   <linked-el length="38" name="%0" offset="783" path="%2"/>
+   <linked-el length="25" name="%0" offset="912" path="%3"/>
+   <linked-el length="27" name="%0" offset="822" path="%3"/>
+   <linked-el length="41" name="%0" offset="896" path="%2"/>
    <linked-el length="25" name="%4" offset="945" path="%1"/>
-   <linked-el length="27" name="%4" offset="1055" path="%2"/>
+   <linked-el length="32" name="%4" offset="1059" path="%2"/>
    <linked-el length="27" name="%4" offset="855" path="%1"/>
-   <linked-el length="20" name="%4" offset="1239" path="%2"/>
-   <linked-el length="25" name="%4" offset="912" path="%2"/>
-   <linked-el length="21" name="%4" offset="686" path="%3"/>
-   <linked-el length="41" name="%4" offset="890" path="%3"/>
-   <linked-el length="38" name="%4" offset="779" path="%3"/>
-   <linked-el length="26" name="%4" offset="975" path="%3"/>
-   <linked-el length="27" name="%4" offset="822" path="%2"/>
+   <linked-el length="38" name="%4" offset="783" path="%2"/>
+   <linked-el length="27" name="%4" offset="1060" path="%3"/>
+   <linked-el length="25" name="%4" offset="912" path="%3"/>
+   <linked-el length="21" name="%4" offset="688" path="%2"/>
+   <linked-el length="27" name="%4" offset="822" path="%3"/>
+   <linked-el length="41" name="%4" offset="896" path="%2"/>
    <linked-el length="28" name="%4" offset="1088" path="%1"/>
+   <linked-el length="20" name="%4" offset="1250" path="%3"/>
+   <linked-el length="27" name="%4" offset="982" path="%2"/>
    <linked-el length="25" name="%5" offset="945" path="%1"/>
-   <linked-el length="27" name="%5" offset="1055" path="%2"/>
+   <linked-el length="32" name="%5" offset="1059" path="%2"/>
    <linked-el length="27" name="%5" offset="855" path="%1"/>
-   <linked-el length="20" name="%5" offset="1239" path="%2"/>
-   <linked-el length="25" name="%5" offset="912" path="%2"/>
-   <linked-el length="21" name="%5" offset="686" path="%3"/>
-   <linked-el length="41" name="%5" offset="890" path="%3"/>
-   <linked-el length="38" name="%5" offset="779" path="%3"/>
-   <linked-el length="26" name="%5" offset="975" path="%3"/>
-   <linked-el length="27" name="%5" offset="822" path="%2"/>
+   <linked-el length="38" name="%5" offset="783" path="%2"/>
+   <linked-el length="27" name="%5" offset="1060" path="%3"/>
+   <linked-el length="25" name="%5" offset="912" path="%3"/>
+   <linked-el length="21" name="%5" offset="688" path="%2"/>
+   <linked-el length="27" name="%5" offset="822" path="%3"/>
+   <linked-el length="41" name="%5" offset="896" path="%2"/>
    <linked-el length="28" name="%5" offset="1088" path="%1"/>
+   <linked-el length="20" name="%5" offset="1250" path="%3"/>
+   <linked-el length="27" name="%5" offset="982" path="%2"/>
   </el>
  </validation>
  <aliases>
   <alias path="/TCC/src/br/com/login/model/User.java" value="%0"/>
-  <alias path="/TCC/WebContent/Login/result.xhtml" value="%3"/>
+  <alias path="/TCC/WebContent/Login/result.xhtml" value="%2"/>
   <alias path="/TCC/WebContent/Login/cadastro_index.xhtml" value="%1"/>
   <alias path="userBean" value="%4"/>
-  <alias path="/TCC/WebContent/Login/login_index.xhtml" value="%2"/>
+  <alias path="/TCC/WebContent/Login/login_index.xhtml" value="%3"/>
   <alias path="/TCC/src/br/com/login/bean/UserBean.java" value="%5"/>
   <alias path="%5" value="/TCC/src/br/com/login/bean/UserBean.java"/>
   <alias path="%0" value="/TCC/src/br/com/login/model/User.java"/>
   <alias path="%4" value="userBean"/>
-  <alias path="%3" value="/TCC/WebContent/Login/result.xhtml"/>
-  <alias path="%2" value="/TCC/WebContent/Login/login_index.xhtml"/>
+  <alias path="%3" value="/TCC/WebContent/Login/login_index.xhtml"/>
+  <alias path="%2" value="/TCC/WebContent/Login/result.xhtml"/>
   <alias path="%1" value="/TCC/WebContent/Login/cadastro_index.xhtml"/>
  </aliases>
  <includes/>
