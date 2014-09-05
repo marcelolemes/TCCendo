@@ -19,6 +19,8 @@
 				<p:outputLabel value="#{userBean.userLogado.servicoatual}" />
 				<p:outputLabel value="ultimo serviço" />
 				<p:outputLabel value="#{userBean.userLogado.servicoanterior}" />
+				<p:outputLabel value="Teste de outra Bean" />
+				<p:outputLabel value="#{panelUser.sessaoAtiva}" />
 				<p:commandButton value="Sair" action="#{userBean.sairSessao()}" />
 				<p:commandButton value="Atualizar" action="#{userBean.atualizar()}"
 					update="@all" />
