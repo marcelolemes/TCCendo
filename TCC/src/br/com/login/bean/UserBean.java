@@ -1,15 +1,15 @@
 package br.com.login.bean;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import br.com.login.Dao.UserDao;
 import br.com.login.model.User;
 
 @ManagedBean(name = "userBean", eager = true)
-@ApplicationScoped
+@SessionScoped
 public class UserBean {
 
 	public UserBean() {
