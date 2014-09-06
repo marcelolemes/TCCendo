@@ -126,18 +126,25 @@ public class UserBean {
 	}
 
 	public String sairSessao() throws Exception {
-		// remover sessão do manage bean selecionado
-		try {
-			logado = false;
-			FacesContext.getCurrentInstance().getExternalContext()
-					.getSessionMap().remove("userBean");
-			userDao.gravarTimestamp(userLogado);
 
-		} catch (Exception ex) {
-			// TODO: handle exception
+		if (logado) {
+			try {
+				logado = false;
+				// remover sessão do manage bean selecionado
+				FacesContext.getCurrentInstance().getExternalContext()
+						.getSessionMap().remove("userBean");
+				userDao.gravarTimestamp(userLogado);
+
+			} catch (Exception ex) {
+				// TODO: handle exception
+			}
+
+			return "/pages/login_index.xhtml";
+		} else {
+
+			nenhumUsuario();
+			return "/pages/login_index.xhtml";
 		}
-
-		return "/pages/login_index.xhtml";
 
 	}
 
@@ -175,10 +182,12 @@ public class UserBean {
 	}
 
 	public void nenhumUsuario() {
-		FacesContext.getCurrentInstance().addMessage(
-				null,
-				new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro",
-						"Nenhum usuário logado, por favor, efetue seu login"));
+		FacesContext
+				.getCurrentInstance()
+				.addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro",
+								"Nenhum usuário logado, para realizar alguma operação, efetue seu login"));
 
 	}
 
