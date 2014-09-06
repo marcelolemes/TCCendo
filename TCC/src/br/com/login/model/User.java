@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Entity
 @ManagedBean
@@ -19,6 +20,8 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cod;
 	@Column
+	private int nivelacesso;
+	@Column
 	private String apelido;
 	@Column
 	private String senha;
@@ -27,14 +30,13 @@ public class User {
 	@Column
 	private String servicoanterior;
 	@Column
-	private String ultimoacesso;
-	
+	private Timestamp ultimoacesso;
 
-	public String getUltimoacesso() {
+	public Timestamp getUltimoacesso() {
 		return ultimoacesso;
 	}
 
-	public void setUltimoacesso(String ultimoacesso) {
+	public void setUltimoacesso(Timestamp ultimoacesso) {
 		this.ultimoacesso = ultimoacesso;
 	}
 
@@ -60,6 +62,14 @@ public class User {
 
 	public void setCod(int cod) {
 		this.cod = cod;
+	}
+
+	public int getNivelAcesso() {
+		return nivelacesso;
+	}
+
+	public void setNivelAcesso(int nivelAcesso) {
+		this.nivelacesso = nivelAcesso;
 	}
 
 	public String getApelido() {

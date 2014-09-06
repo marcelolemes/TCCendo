@@ -11,12 +11,12 @@ public class PanelUser {
 	private UserBean userBean;
 	
 	private String sessaoAtiva;
-	//private String sessaoAtiva;
+
 	
 	
 	@PostConstruct
     public void init() {
-        sessaoAtiva= userBean.getSessao();
+        
     }
 
 

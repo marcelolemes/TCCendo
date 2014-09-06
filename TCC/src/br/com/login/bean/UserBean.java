@@ -4,7 +4,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import br.com.login.Dao.UserDao;
 import br.com.login.model.User;
 
@@ -20,10 +19,10 @@ public class UserBean {
 
 	private User user;
 	private User userLogado;
-
+	UserDao userDao;
 	private String sessao = new String();
 
-	private String teste = new String();
+	private static boolean logado = false;
 
 	public User getUser() {
 		return user;
@@ -34,30 +33,46 @@ public class UserBean {
 	}
 
 	public String atualizar() throws Exception {
-		UserDao userDao = new UserDao();
+
 		userLogado = userDao.atualizar(userLogado);
-		return "result.xhtml";
+		// return "result.xhtml";
+		return "/pages/result_index.xhtml";
+	}
+
+	public String verificarLogado() throws Exception {
+
+		if (logado) {
+
+			return "/pages/result_index.xhtml";
+		} else {
+			return "/pages/login_index.xhtml";
+		}
 	}
 
 	public String logar() throws Exception {
-		UserDao userDao = new UserDao();
-
-		if ((userLogado = userDao.testarLogin(user)) != null) {
-			System.out.print("Encontrado");
-			setSessao(user.getApelido());
-			sessao = user.getApelido();
-
-			return messageSucessoLogin();
+		if (logado) {
+			loginAtivo();
+			return "/pages/result_index.xhtml";
 
 		} else {
-			System.out.print("Não encontrado");
-			messageErroLogin();
+			userDao = new UserDao();
+			if ((userLogado = userDao.testarLogin(user)) != null) {
+				System.out.print(" Encontrado ");
+				setSessao(user.getApelido());
+				logado = true;
+				return messageSucessoLogin();
+
+			} else {
+				System.out.print("Não encontrado");
+				logado = false;
+				messageErroLogin();
+			}
+			return null;
 		}
-		return null;
 	}
 
 	public String gravar() {
-		UserDao userDao = new UserDao();
+		userDao = new UserDao();
 		try {
 			if (userDao.Gravar(user)) {
 				messageSucessoGravar();
@@ -65,7 +80,9 @@ public class UserBean {
 			return sairSessao();
 
 		} catch (Exception ex) {
-			messageErroLogin();
+			messageErroCadastro();
+			ex.printStackTrace();
+			ex.getMessage();
 			return null;
 		}
 
@@ -76,7 +93,18 @@ public class UserBean {
 				null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Login",
 						"Seja bem vindo " + sessao));
-		return "result.xhtml";
+		// return "result.xhtml";
+		return "/pages/result_index.xhtml";
+
+	}
+
+	public String loginAtivo() {
+		FacesContext.getCurrentInstance().addMessage(
+				null,
+				new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Ativo",
+						"Sessão ainda ativa para o usuário:  " + sessao));
+		// return "result.xhtml";
+		return "/pages/result_index.xhtml";
 
 	}
 
@@ -93,14 +121,44 @@ public class UserBean {
 		// remover sessão do manage bean selecionado
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
 				.remove("userBean");
+		logado = false;
 
 	}
 
-	public String sairSessao() {
+	public String sairSessao() throws Exception {
 		// remover sessão do manage bean selecionado
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
-				.remove("userBean");
-		return "login_index.xhtml";
+		try {
+			logado = false;
+			FacesContext.getCurrentInstance().getExternalContext()
+					.getSessionMap().remove("userBean");
+			userDao.gravarTimestamp(userLogado);
+
+		} catch (Exception ex) {
+			// TODO: handle exception
+		}
+
+		return "/pages/login_index.xhtml";
+
+	}
+
+	public String btCadastro() {
+
+		if (logado) {
+			if (userLogado.getNivelAcesso() < 3) {
+
+				autoridadeInsuficiente();
+				// return "result.xhtml";
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/cadastro_index.xhtml";
+			}
+
+		} else {
+			nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
 
 	}
 
@@ -114,6 +172,25 @@ public class UserBean {
 		// remover sessão do manage bean selecionado
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
 				.remove("userBean");
+	}
+
+	public void nenhumUsuario() {
+		FacesContext.getCurrentInstance().addMessage(
+				null,
+				new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro",
+						"Nenhum usuário logado, por favor, efetue seu login"));
+
+	}
+
+	public void autoridadeInsuficiente() {
+		FacesContext
+				.getCurrentInstance()
+				.addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_WARN, userLogado
+								.getApelido(),
+								"Seu acesso à esta função não é permitida, acesso negado!"));
+
 	}
 
 	public void messageErroCadastro() {
@@ -131,20 +208,20 @@ public class UserBean {
 		this.sessao = sessao;
 	}
 
-	public String getTeste() {
-		return teste;
-	}
-
-	public void setTeste(String teste) {
-		this.teste = teste;
-	}
-
 	public User getUserLogado() {
 		return userLogado;
 	}
 
 	public void setUserLogado(User userLogado) {
 		this.userLogado = userLogado;
+	}
+
+	public boolean isLogado() {
+		return logado;
+	}
+
+	public void setLogado(boolean logado) {
+		this.logado = logado;
 	}
 
 }
