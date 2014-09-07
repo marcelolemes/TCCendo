@@ -13,16 +13,24 @@
 	<h:outputStylesheet library="css" name="estilo.css" />
 	<body>
 		<h:form id="menu">
-		
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" showIcon="false" />
 			<p:menubar>
 				<p:submenu label="Usuário">
 					<p:menuitem value="Encerrar Sessão"
 						action="#{userBean.sairSessao()}" />
 				</p:submenu>
 
-				<p:submenu label="Cadastro">
+				<p:submenu label="Contratos">
+					<p:menuitem value="Visualizar Contratos" action="/pages/visualizarcursos_index.xhtml" />
+				</p:submenu>
+
+				<p:submenu label="SysAdmin">
 					<p:menuitem value="Cadastrar Usuário"
 						action="#{userBean.btCadastro()}" />
+
+					<p:menuitem value="Usuários Cadastrados"
+						action="#{userBean.btListarUers()}" />
 				</p:submenu>
 
 			</p:menubar>

@@ -1,18 +1,17 @@
 package br.com.login.model;
 
+import java.sql.Timestamp;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Timestamp;
 
 @Entity
 @ManagedBean
-@RequestScoped
 @Table(name = "Usuario")
 public class User {
 	@Id

@@ -1,15 +1,22 @@
 package br.com.login.bean;
 
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
+
 import br.com.login.Dao.UserDao;
+import br.com.login.model.Metricas;
 import br.com.login.model.User;
 
 @ManagedBean(name = "userBean", eager = true)
 @SessionScoped
 public class UserBean {
+	private List<SelectItem> nivelAcessoCadastro = new Metricas()
+			.getNivelAcesso();
 
 	public UserBean() {
 
@@ -60,10 +67,13 @@ public class UserBean {
 				System.out.print(" Encontrado ");
 				setSessao(user.getApelido());
 				logado = true;
+				user = new User();
+
 				return messageSucessoLogin();
 
 			} else {
 				System.out.print("Não encontrado");
+				user = new User();
 				logado = false;
 				messageErroLogin();
 			}
@@ -76,6 +86,7 @@ public class UserBean {
 		try {
 			if (userDao.Gravar(user)) {
 				messageSucessoGravar();
+				user = new User();
 			}
 			return sairSessao();
 
@@ -169,6 +180,27 @@ public class UserBean {
 
 	}
 
+	public String btListarUers() {
+
+		if (logado) {
+			if (userLogado.getNivelAcesso() < 3) {
+
+				autoridadeInsuficiente();
+				// return "result.xhtml";
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/usuarios_cadastrados_index.xhtml";
+			}
+
+		} else {
+			nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
 	public void messageErroLogin() {
 		FacesContext
 				.getCurrentInstance()
@@ -231,6 +263,14 @@ public class UserBean {
 
 	public void setLogado(boolean logado) {
 		this.logado = logado;
+	}
+
+	public List<SelectItem> getNivelAcessoCadastro() {
+		return nivelAcessoCadastro;
+	}
+
+	public void setNivelAcessoCadastro(List<SelectItem> nivelAcessoCadastro) {
+		this.nivelAcessoCadastro = nivelAcessoCadastro;
 	}
 
 }

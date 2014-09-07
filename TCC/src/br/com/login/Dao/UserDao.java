@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.hibernate.Criteria;
@@ -14,6 +15,7 @@ import org.hibernate.criterion.Restrictions;
 import br.com.login.model.User;
 import br.com.login.util.HibernateUtil;
 
+@ViewScoped
 public class UserDao {
 
 	public User atualizar(User user) throws Exception {
@@ -21,25 +23,24 @@ public class UserDao {
 		Session sessao = HibernateUtil.getSession();
 		Criteria criteria = sessao.createCriteria(User.class);
 		criteria.add(Restrictions.eq("apelido", user.getApelido()));
-		
+
 		return (User) criteria.uniqueResult();
-		
+
 	}
-	
-	
+
 	public void gravarTimestamp(User user) throws Exception {
 		Session sessao = HibernateUtil.getSession();
 		org.hibernate.Transaction transacao = sessao.beginTransaction();
 		Criteria criteria = sessao.createCriteria(User.class);
 		criteria.add(Restrictions.eq("apelido", user.getApelido()));
-		user.setUltimoacesso(new Timestamp(new Date(System.currentTimeMillis()).getTime()));
+		user.setUltimoacesso(new Timestamp(new Date(System.currentTimeMillis())
+				.getTime()));
 		sessao.update(user);
 		transacao.commit();
 		sessao.close();
-		
+
 	}
-	
-	
+
 	public User testarLogin(User user) throws Exception {
 		User resultado;
 		Session sessao = HibernateUtil.getSession();
@@ -51,7 +52,7 @@ public class UserDao {
 			if (resultado.getSenha() != null) {
 				if (resultado.getSenha().equals(user.getSenha())) {
 					sessao.close();
-					
+
 					return resultado;
 				} else
 					sessao.close();
@@ -64,6 +65,14 @@ public class UserDao {
 			sessao.close();
 		return null;
 
+	}
+
+	public List<User> ListarUsers() throws Exception {
+		Session sessao = HibernateUtil.getSession();
+		Criteria criteria = sessao.createCriteria(User.class);
+		List<User> listaRetorno = criteria.list();
+		sessao.close();
+		return listaRetorno;
 	}
 
 	public boolean Gravar(User user) throws Exception {
@@ -112,7 +121,7 @@ public class UserDao {
 					sessao.close();
 					return false;
 				} else {
-					
+
 					sessao.saveOrUpdate(user);
 					transacao.commit();
 					sessao.close();
