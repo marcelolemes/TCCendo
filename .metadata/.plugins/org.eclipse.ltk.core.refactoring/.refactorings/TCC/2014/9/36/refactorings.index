@@ -5,3 +5,20 @@
 1409753835722	Rename field 'user'
 1409755303556	Delete element
 1409757927876	Encapsulate field 'userLogado'
+1409976307039	Rename resource 'cadastrar_cliente_principal.xhtml'
+1409976556278	Rename resource 'index.xhtml'
+1409976689477	Copy file
+1409976727235	Rename resource 'cadastro_index.xhtml'
+1409976736874	Rename resource 'index_cadastro.xhtml'
+1409976751195	Rename resource 'login_index.xhtml'
+1409976760450	Rename resource 'index_login.xhtml'
+1409976834551	Copy file
+1410093732097	Move 1 resources to 'conteudo'
+1410094632127	Encapsulate field 'listaUsers'
+1410095931612	Copy file
+1410096056129	Delete element
+1410101353475	Encapsulate field 'contratoCadastro'
+1410101465908	Copy compilation unit
+1410115381730	Encapsulate field 'listaContrato'
+1410115922653	Copy compilation unit
+1410119397494	Encapsulate field 'urgencias'
