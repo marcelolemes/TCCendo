@@ -22,8 +22,10 @@
 				</p:submenu>
 
 				<p:submenu label="Contratos">
-					<p:menuitem value="Visualizar Contratos" action="/pages/visualizarcursos_index.xhtml" />
+					<p:menuitem value="Visualizar Contratos" action="#{userBean.btVisualizarCursos()}" />
+					<p:menuitem value="Cadastrar Contratos" action="#{userBean.btCadastrarCursos()}" />
 				</p:submenu>
+				
 
 				<p:submenu label="SysAdmin">
 					<p:menuitem value="Cadastrar Usuário"

@@ -25,6 +25,7 @@ public class ListarCursos implements Serializable {
 	private Metricas metricas = new Metricas();
 	private List<Contrato> listaContrato;
 	private List<String> urgencias;
+	private Contrato contratoSelecionado;
 
 	public ListarCursos() throws Exception {
 
@@ -72,6 +73,14 @@ public class ListarCursos implements Serializable {
 
 	public void setUrgencias(List<String> urgencias) {
 		this.urgencias = urgencias;
+	}
+
+	public Contrato getContratoSelecionado() {
+		return contratoSelecionado;
+	}
+
+	public void setContratoSelecionado(Contrato contratoSelecionado) {
+		this.contratoSelecionado = contratoSelecionado;
 	}
 
 }

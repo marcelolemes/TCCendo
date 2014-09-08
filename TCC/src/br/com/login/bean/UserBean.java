@@ -1,10 +1,11 @@
 package br.com.login.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
@@ -13,8 +14,12 @@ import br.com.login.model.Metricas;
 import br.com.login.model.User;
 
 @ManagedBean(name = "userBean", eager = true)
-@SessionScoped
-public class UserBean {
+@ApplicationScoped
+public class UserBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<SelectItem> nivelAcessoCadastro = new Metricas()
 			.getNivelAcesso();
 
@@ -179,6 +184,51 @@ public class UserBean {
 		}
 
 	}
+	
+	
+	public String btVisualizarCursos() {
+
+		if (logado) {
+			if (userLogado.getNivelAcesso() < 0) {
+
+				autoridadeInsuficiente();
+
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/visualizarcursos_index.xhtml";
+			}
+
+		} else {
+			nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	public String btCadastrarCursos() {
+
+		if (logado) {
+			if (userLogado.getNivelAcesso() < 0) {
+
+				autoridadeInsuficiente();
+
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/cadastrarcursos_index.xhtml";
+			}
+
+		} else {
+			nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	
 
 	public String btListarUers() {
 
