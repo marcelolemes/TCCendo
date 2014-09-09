@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" 
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:b="http://bootsfaces.net/ui">
 <h:head>
@@ -15,15 +15,27 @@
 	<h:form id="login">
 		<p:growl id="growl" showDetail="true" />
 		<p:panel styleClass="center">
-			<p:panelGrid columns="2" styleClass="semBorda">
-				<p:outputLabel value="Apelido" />
-				<p:inputText id="apelidoInput" value="#{userBean.user.apelido}" />
-				<p:outputLabel value="Senha" />
-				<p:password value="#{userBean.user.senha}" />
-			</p:panelGrid>
-			<p:commandButton value="Fazer Login" action="#{userBean.logar()}"
-				update="@all" />
+			<div align="center">
+				<p:panelGrid columns="1" styleClass="semBorda">
+					<div align="center">
+						<h2 class="titulologin">Login</h2>
+					</div>
+					<p:inputText id="apelidoInput" value="#{userBean.user.apelido}"
+						styleClass="button-login" />
+					<p:password id="senhaInput" value="#{userBean.user.senha}"
+						styleClass="button-login" />
+				</p:panelGrid>
+			</div>
+			<p:panelGrid columns="1" styleClass="semBorda">
 
+				<p:commandButton styleClass="button-login" value="Entrar"
+					action="#{userBean.logar()}" update="@all" />
+
+				<p:watermark for="apelidoInput" value="Insira seu apelido"
+					id="watermarkApelido" />
+				<p:watermark for="senhaInput" value="Insira sua senha"
+					id="watermarkSenha" />
+			</p:panelGrid>
 
 		</p:panel>
 

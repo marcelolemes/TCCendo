@@ -1,4 +1,3 @@
-/*! Bootstrap v3.2.0 (http://getbootstrap.com) | Copyright 2011-2014 Twitter, Inc. | Licensed under MIT */
 .ui-button-default:active,.ui-button-primary:active,.ui-button-success:active,.ui-button-info:active,.ui-button-warning:active,.ui-button-danger:active,.ui-button-default.active,.ui-button-primary.active,.ui-button-success.active,.ui-button-info.active,.ui-button-warning.active,.ui-button-danger.active
 	{
 	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -512,12 +511,20 @@ audio
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -530,7 +537,11 @@ controls
 
 
 
+
+
  
+
+
 
 
 
@@ -545,7 +556,13 @@ display
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -555,7 +572,13 @@ display
 
 
 
+
+
 none
+
+
+
+
 
 
 
@@ -574,12 +597,20 @@ height
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -652,12 +683,20 @@ svg
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -668,7 +707,11 @@ svg
 
 
 
+
+
  
+
+
 
 
 
@@ -683,7 +726,13 @@ overflow
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -693,7 +742,13 @@ overflow
 
 
 
+
+
 hidden
+
+
+
+
 
 
 
@@ -891,7 +946,7 @@ body {
 	font-size: 14px;
 	line-height: 1.428571429;
 	color: #333;
-	background-color: #fff
+	/*background-color: #fff*/
 }
 
 input,button,select,textarea {
@@ -2750,7 +2805,6 @@ textarea.input-lg,select[multiple].input-lg {
 }
 
 .ui-button:hover,.ui-button:focus {
-	color: #333;
 	text-decoration: none
 }
 
@@ -3060,12 +3114,20 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3076,7 +3138,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3087,7 +3153,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3098,7 +3168,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3109,7 +3183,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3121,7 +3199,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
 	
+
+
 
 
 
@@ -3136,12 +3218,20 @@ border-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3163,7 +3253,15 @@ border-radius
 
 
 
+
+
+
+
 :first-child
+
+
+
+
 
 
 
@@ -3177,7 +3275,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3188,7 +3290,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3199,7 +3305,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3210,7 +3320,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3225,12 +3339,20 @@ border-bottom-right-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3245,12 +3367,20 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3268,7 +3398,15 @@ border-top-right-radius
 
 
 
+
+
+
+
 :last-child
+
+
+
+
 
 
 
@@ -3282,7 +3420,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3293,7 +3435,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3310,7 +3456,13 @@ border-top-right-radius
 
 
 
+
+
+
+
 :not
+
+
 
 
 
@@ -3321,13 +3473,19 @@ border-top-right-radius
 
 
 
+
+
 (
 :first-child
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3342,12 +3500,20 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3362,12 +3528,20 @@ border-top-left-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3461,12 +3635,20 @@ border-top-left-radius
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3477,7 +3659,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3488,7 +3674,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3499,7 +3689,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3514,12 +3708,20 @@ border-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3537,7 +3739,15 @@ border-radius
 
 
 
+
+
+
+
 :first-child
+
+
+
+
 
 
 
@@ -3551,7 +3761,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3562,7 +3776,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3577,7 +3795,13 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -3587,8 +3811,14 @@ border-top-right-radius
 
 
 
+
+
 4
 px
+
+
+
+
 
 
 
@@ -3607,12 +3837,20 @@ border-bottom-right-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3627,12 +3865,20 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3650,7 +3896,15 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :last-child
+
+
+
+
 
 
 
@@ -3664,7 +3918,11 @@ border-bottom-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3675,7 +3933,11 @@ border-bottom-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3690,7 +3952,13 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -3700,8 +3968,14 @@ border-bottom-left-radius
 
 
 
+
+
 4
 px
+
+
+
+
 
 
 
@@ -3720,12 +3994,20 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -3740,12 +4022,20 @@ border-top-left-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -5130,12 +5420,20 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -5146,7 +5444,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5157,7 +5459,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5168,7 +5474,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5183,7 +5493,13 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
 :not
+
+
 
 
 
@@ -5194,13 +5510,19 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
 (
 :first-child
 
 
 
 
+
+
  
+
+
 
 
 
@@ -5211,7 +5533,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5222,7 +5548,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5233,7 +5563,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5247,12 +5581,20 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
 :not
 
 
 
 
+
+
  
+
+
 
 
 
@@ -5264,7 +5606,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
 	
+
+
 
 
 
@@ -5275,7 +5621,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5286,7 +5636,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
  
+
+
 
 
 
@@ -5301,12 +5655,20 @@ border-radius
 
 
 
+
+
+
+
 :
 
 
 
 
+
+
  
+
+
 
 
 
@@ -5872,3 +6234,111 @@ border-radius
 	font-size: 24px;
 	border: 1px solid #2d6898;
 }
+
+.ui-menu.ui-widget { /*config menu*/
+	min-width: 160px;
+	padding: 5px 2px;
+	opacity:1;
+	overflow: visible !important;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.ui-menu.ui-widget a {/*config interna menu*/
+	background-color: #ffffff;
+	padding: 20px;
+	display: block;
+	clear: both;
+	font-weight: bold;
+	color: #333333;
+	white-space: nowrap;
+}
+
+.ui-menu.ui-widget li.ui-corner-all,.ui-menu.ui-widget a.ui-corner-all {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.ui-menu.ui-widget .ui-menu-list {
+	
+}
+
+.ui-menu.ui-widget li>.ui-menuitem-link {
+	padding: 0.3em 0;
+	width: 100%;
+	border-width: 1px 0px;
+}
+
+.ui-menu.ui-widget .ui-menu-list .ui-widget-header {
+	border-width: 1px 0px;
+	width: 100%;
+}
+
+.ui-menu.ui-widget li>.ui-menuitem-link.ui-state-hover {
+	color: #ffffff;
+	opacity:1;
+	text-decoration: none;
+	background-color: #0088cc;
+	background-color: #0081c2;
+	background-position: 0px;
+	background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc),
+		to(#0077b3));
+	background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+	background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+	background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+	background-repeat: repeat-x;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc',
+		endColorstr='#ff0077b3', GradientType=0);
+}
+
+.ui-menu.ui-widget li>.ui-menuitem-link.ui-state-hover .ui-icon {
+	background-image:
+		url("#{resource['primefaces-bootstrap:images/ui-icons_ffffff_256x240.png']}");
+}
+
+.ui-menu.ui-widget .ui-separator {
+	height: 1px;
+	overflow: visible !important;
+	background-color: #e5e5e5;
+	border: 0 none;
+	border-bottom: 1px solid #ffffff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.ui-menu.ui-widget .ui-menuitem-link .ui-menuitem-icon {
+	margin-left: 0.3em;
+	margin-right: -0.2em;
+}
+
+.ui-menu.ui-widget .ui-menuitem-link .ui-menuitem-text {
+	margin-left: 0.4em;
+}
+
+.ui-shadow {
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ui-menu.ui-slidemenu .ui-shadow {
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+

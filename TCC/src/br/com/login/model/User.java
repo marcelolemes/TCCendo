@@ -1,5 +1,6 @@
 package br.com.login.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 import javax.faces.bean.ManagedBean;
@@ -13,7 +14,11 @@ import javax.persistence.Table;
 @Entity
 @ManagedBean
 @Table(name = "Usuario")
-public class User {
+public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)

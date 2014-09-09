@@ -10,6 +10,7 @@
 	z-index: 20 !important;
 	overflow: visible !important;
 	border: none !important;
+	opacity: 1;
 }
 
 .ui-menubar {
@@ -43,5 +44,26 @@
 }
 
 .button:hover {
+	
+}
 
+.button-login,.ui-button-login {
+	
+	font-size: 20px ! important;
+	/*background-color: #000 ! important;*/
+	height: 50px ! important;
+	width: 300px ! important;
+}
+
+.button-login:hover,.ui-button-login:hover {
+	font-size: 20px ! important;
+	/*background-color: #000 ! important;*/
+	height: 50px ! important;
+	width: 300px ! important;
+}
+
+.titulologin{
+	font-size: 50px ! important;
+	font-style: bold ! important;
+	
 }
