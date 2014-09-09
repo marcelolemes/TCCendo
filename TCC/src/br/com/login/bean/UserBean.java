@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
@@ -14,8 +14,8 @@ import br.com.login.model.Metricas;
 import br.com.login.model.User;
 
 @ManagedBean(name = "userBean", eager = true)
-@ApplicationScoped
-public class UserBean implements Serializable{
+@SessionScoped
+public class UserBean implements Serializable {
 	/**
 	 * 
 	 */
@@ -26,7 +26,8 @@ public class UserBean implements Serializable{
 	public UserBean() {
 
 		user = new User();
-
+		logado = false;
+		 
 	}
 
 	private User user;
@@ -38,6 +39,7 @@ public class UserBean implements Serializable{
 
 	public User getUser() {
 		return user;
+
 	}
 
 	public void setUser(User user) {
@@ -184,8 +186,7 @@ public class UserBean implements Serializable{
 		}
 
 	}
-	
-	
+
 	public String btVisualizarCursos() {
 
 		if (logado) {
@@ -227,8 +228,6 @@ public class UserBean implements Serializable{
 		}
 
 	}
-
-	
 
 	public String btListarUers() {
 

@@ -10,7 +10,7 @@ import javax.faces.bean.ViewScoped;
 @ManagedBean
 @ViewScoped
 public class PanelUser implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -18,31 +18,25 @@ public class PanelUser implements Serializable {
 
 	@ManagedProperty("#{userBean}")
 	private UserBean userBean;
-	
+
 	private String sessaoAtiva;
 
-	
-	
 	@PostConstruct
-    public void init() {
-        
-    }
+	public void init() {
 
+	}
 
 	public UserBean getUserBean() {
 		return userBean;
 	}
 
-
 	public void setUserBean(UserBean userBean) {
 		this.userBean = userBean;
 	}
 
-
 	public String getSessaoAtiva() {
 		return sessaoAtiva;
 	}
-
 
 	public void setSessaoAtiva(String sessaoAtiva) {
 		this.sessaoAtiva = sessaoAtiva;
