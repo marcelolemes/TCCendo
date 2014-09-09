@@ -1,9 +1,7 @@
-.ui-button-default:active,.ui-button-primary:active,.ui-button-success:active,.ui-button-info:active,.ui-button-warning:active,.ui-button-danger:active,.ui-button-default.active,.ui-button-primary.active,.ui-button-success.active,.ui-button-info.active,.ui-button-warning.active,.ui-button-danger.active
-	{
-	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
-}
-
+/*{-webkit-box-shadow:inset 03px 5px rgba 0,0,0,0.125);
+box-shadow:inset 03px 5px rgba(0,0,0,0.125
+)
+}*/
 .ui-button:active,.ui-button.active {
 	background-image: none
 }
@@ -488,10 +486,13 @@ html {
 	-webkit-text-size-adjust: 100%
 }
 
-body {
-	margin: 0
+body { /*fundo corpo*/
+	margin: 0;
+	background-image:
+		url("#{resources['primefaces-estilo:images/FUNDO.jpg']}");
 }
 
+}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary
 	{
 	display: block
@@ -515,6 +516,16 @@ audio
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -522,7 +533,17 @@ audio
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -539,7 +560,17 @@ controls
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -560,7 +591,22 @@ display
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
 
 
 
@@ -574,7 +620,22 @@ display
 
 
 
+
+
+
+
+
 none
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -601,6 +662,16 @@ height
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -608,7 +679,17 @@ height
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -687,6 +768,16 @@ svg
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -694,7 +785,17 @@ svg
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -709,7 +810,17 @@ svg
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -730,7 +841,22 @@ overflow
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
 
 
 
@@ -744,7 +870,22 @@ overflow
 
 
 
+
+
+
+
+
 hidden
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -947,6 +1088,7 @@ body {
 	line-height: 1.428571429;
 	color: #333;
 	/*background-color: #fff*/
+	
 }
 
 input,button,select,textarea {
@@ -3118,6 +3260,16 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -3125,7 +3277,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3140,7 +3302,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3155,7 +3327,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3170,7 +3352,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3185,7 +3377,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3201,7 +3403,17 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
 	
+
+
+
+
+
 
 
 
@@ -3222,6 +3434,16 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3229,7 +3451,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3257,7 +3489,27 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3277,7 +3529,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3292,7 +3554,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3307,7 +3579,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3322,7 +3604,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3343,6 +3635,16 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3350,7 +3652,17 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3371,6 +3683,16 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3378,7 +3700,17 @@ border-top-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3402,7 +3734,27 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :last-child
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3422,7 +3774,17 @@ border-top-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3437,7 +3799,17 @@ border-top-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3460,7 +3832,22 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
+
+
+
+
+
 
 
 
@@ -3475,6 +3862,11 @@ border-top-right-radius
 
 
 
+
+
+
+
+
 (
 :first-child
 
@@ -3483,7 +3875,17 @@ border-top-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3504,6 +3906,16 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3511,7 +3923,17 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3532,6 +3954,16 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3539,7 +3971,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3639,6 +4081,16 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -3646,7 +4098,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3661,7 +4123,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3676,7 +4148,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3691,7 +4173,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3712,6 +4204,16 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3719,7 +4221,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3743,7 +4255,27 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3763,7 +4295,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3778,7 +4320,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3799,7 +4351,22 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
 
 
 
@@ -3813,8 +4380,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
 4
 px
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3841,6 +4423,16 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3848,7 +4440,17 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3869,7 +4471,22 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
 
 
 
@@ -3883,11 +4500,26 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
 0
 }
 .ui-button-group-vertical
 >
 .ui-button
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3913,6 +4545,16 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -3920,7 +4562,17 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3935,7 +4587,17 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -3956,7 +4618,22 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
 
 
 
@@ -3970,8 +4647,23 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
 4
 px
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3998,6 +4690,16 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4005,7 +4707,17 @@ border-top-right-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -4026,6 +4738,16 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4033,7 +4755,17 @@ border-top-left-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5424,6 +6156,16 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -5431,7 +6173,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5446,7 +6198,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5461,7 +6223,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5476,7 +6248,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5497,7 +6279,22 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
+
+
+
+
+
 
 
 
@@ -5512,6 +6309,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
 (
 :first-child
 
@@ -5520,7 +6322,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5535,7 +6347,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5550,7 +6372,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5565,7 +6397,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5585,6 +6427,16 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -5592,7 +6444,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5608,7 +6470,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
 	
+
+
+
+
+
 
 
 
@@ -5623,7 +6495,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5638,7 +6520,17 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -5659,6 +6551,16 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -5666,7 +6568,17 @@ border-radius
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -6238,7 +7150,7 @@ border-radius
 .ui-menu.ui-widget { /*config menu*/
 	min-width: 160px;
 	padding: 5px 2px;
-	opacity:1;
+	opacity: 1;
 	overflow: visible !important;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
@@ -6253,7 +7165,7 @@ border-radius
 	background-clip: padding-box;
 }
 
-.ui-menu.ui-widget a {/*config interna menu*/
+.ui-menu.ui-widget a { /*config interna menu*/
 	background-color: #ffffff;
 	padding: 20px;
 	display: block;
@@ -6286,7 +7198,7 @@ border-radius
 
 .ui-menu.ui-widget li>.ui-menuitem-link.ui-state-hover {
 	color: #ffffff;
-	opacity:1;
+	opacity: 1;
 	text-decoration: none;
 	background-color: #0088cc;
 	background-color: #0081c2;
@@ -6341,4 +7253,3 @@ border-radius
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
-
