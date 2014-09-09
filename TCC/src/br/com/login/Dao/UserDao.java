@@ -1,5 +1,6 @@
 package br.com.login.Dao;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
@@ -16,10 +17,14 @@ import br.com.login.model.User;
 import br.com.login.util.HibernateUtil;
 
 @ViewScoped
-public class UserDao {
+public class UserDao implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public User atualizar(User user) throws Exception {
-		User resultado;
 		Session sessao = HibernateUtil.getSession();
 		Criteria criteria = sessao.createCriteria(User.class);
 		criteria.add(Restrictions.eq("apelido", user.getApelido()));

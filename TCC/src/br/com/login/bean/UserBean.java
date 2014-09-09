@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
+import javax.servlet.http.HttpSession;
 
 import br.com.login.Dao.UserDao;
 import br.com.login.model.Metricas;
@@ -27,7 +28,7 @@ public class UserBean implements Serializable {
 
 		user = new User();
 		logado = false;
-		 
+		
 	}
 
 	private User user;
@@ -53,19 +54,12 @@ public class UserBean implements Serializable {
 		return "/pages/result_index.xhtml";
 	}
 
-	public String verificarLogado() throws Exception {
-
-		if (logado) {
-
-			return "/pages/result_index.xhtml";
-		} else {
-			return "/pages/login_index.xhtml";
-		}
-	}
-
 	public String logar() throws Exception {
 		if (logado) {
 			loginAtivo();
+			HttpSession sessao = (HttpSession) FacesContext
+					.getCurrentInstance().getExternalContext().getSession(true);
+			
 			return "/pages/result_index.xhtml";
 
 		} else {
@@ -87,7 +81,9 @@ public class UserBean implements Serializable {
 			return null;
 		}
 	}
-
+	
+	
+	
 	public String gravar() {
 		userDao = new UserDao();
 		try {
@@ -95,7 +91,7 @@ public class UserBean implements Serializable {
 				messageSucessoGravar();
 				user = new User();
 			}
-			return sairSessao();
+			return "/pages/result_index.xhtml";
 
 		} catch (Exception ex) {
 			messageErroCadastro();
@@ -132,121 +128,6 @@ public class UserBean implements Serializable {
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravar",
 						"Cadastro realizado com sucesso, Seja bem vindo "
 								+ sessao));
-
-	}
-
-	public void fecharSessao() {
-		// remover sessão do manage bean selecionado
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
-				.remove("userBean");
-		logado = false;
-
-	}
-
-	public String sairSessao() throws Exception {
-
-		if (logado) {
-			try {
-				logado = false;
-				// remover sessão do manage bean selecionado
-				FacesContext.getCurrentInstance().getExternalContext()
-						.getSessionMap().remove("userBean");
-				userDao.gravarTimestamp(userLogado);
-
-			} catch (Exception ex) {
-				// TODO: handle exception
-			}
-
-			return "/pages/login_index.xhtml";
-		} else {
-
-			nenhumUsuario();
-			return "/pages/login_index.xhtml";
-		}
-
-	}
-
-	public String btCadastro() {
-
-		if (logado) {
-			if (userLogado.getNivelAcesso() < 3) {
-
-				autoridadeInsuficiente();
-				// return "result.xhtml";
-				return "/pages/result_index.xhtml";
-			} else {
-
-				return "/pages/cadastro_index.xhtml";
-			}
-
-		} else {
-			nenhumUsuario();
-			return "/pages/login_index.xhtml";
-
-		}
-
-	}
-
-	public String btVisualizarCursos() {
-
-		if (logado) {
-			if (userLogado.getNivelAcesso() < 0) {
-
-				autoridadeInsuficiente();
-
-				return "/pages/result_index.xhtml";
-			} else {
-
-				return "/pages/visualizarcursos_index.xhtml";
-			}
-
-		} else {
-			nenhumUsuario();
-			return "/pages/login_index.xhtml";
-
-		}
-
-	}
-
-	public String btCadastrarCursos() {
-
-		if (logado) {
-			if (userLogado.getNivelAcesso() < 0) {
-
-				autoridadeInsuficiente();
-
-				return "/pages/result_index.xhtml";
-			} else {
-
-				return "/pages/cadastrarcursos_index.xhtml";
-			}
-
-		} else {
-			nenhumUsuario();
-			return "/pages/login_index.xhtml";
-
-		}
-
-	}
-
-	public String btListarUers() {
-
-		if (logado) {
-			if (userLogado.getNivelAcesso() < 3) {
-
-				autoridadeInsuficiente();
-				// return "result.xhtml";
-				return "/pages/result_index.xhtml";
-			} else {
-
-				return "/pages/usuarios_cadastrados_index.xhtml";
-			}
-
-		} else {
-			nenhumUsuario();
-			return "/pages/login_index.xhtml";
-
-		}
 
 	}
 
@@ -311,7 +192,7 @@ public class UserBean implements Serializable {
 	}
 
 	public void setLogado(boolean logado) {
-		this.logado = logado;
+		UserBean.logado = logado;
 	}
 
 	public List<SelectItem> getNivelAcessoCadastro() {

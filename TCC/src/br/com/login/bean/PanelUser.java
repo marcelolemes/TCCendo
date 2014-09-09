@@ -6,6 +6,9 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import br.com.login.Dao.UserDao;
 
 @ManagedBean
 @ViewScoped
@@ -14,15 +17,153 @@ public class PanelUser implements Serializable {
 	/**
 	 * 
 	 */
+
+	UserDao userDao = new UserDao();
 	private static final long serialVersionUID = -8922198411434111521L;
 
 	@ManagedProperty("#{userBean}")
 	private UserBean userBean;
 
-	private String sessaoAtiva;
-
 	@PostConstruct
 	public void init() {
+
+	}
+
+	public String verificarLogado() throws Exception {
+
+		if (userBean.isLogado() && (userBean.getUserLogado() != null)) {
+
+			return "/pages/result_index.xhtml";
+		} else {
+			return "/pages/login_index.xhtml";
+		}
+	}
+
+	public String btVisualizarCursos() {
+
+		if (userBean.isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+
+				userBean.autoridadeInsuficiente();
+
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/visualizarcursos_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	public String btCadastro() {
+
+		if (userBean.isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+
+				userBean.autoridadeInsuficiente();
+				// return "result.xhtml";
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/cadastro_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	public String btCadastrarCursos() {
+
+		if (userBean.isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+
+				userBean.autoridadeInsuficiente();
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/cadastrarcursos_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	public String btListarUers() {
+
+		if (userBean.isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 3) {
+
+				userBean.autoridadeInsuficiente();
+				// return "result.xhtml";
+				return "/pages/result_index.xhtml";
+			} else {
+
+				return "/pages/usuarios_cadastrados_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+
+	public void fecharSessao() {
+		// remover sessão do manage bean selecionado
+		// FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("userBean");
+		/*
+		userBean.setUserLogado(null);
+		userBean.setLogado(false);
+	*/
+		userBean.setLogado(false);
+		 FacesContext context = FacesContext.getCurrentInstance();
+		 context.getExternalContext().invalidateSession();
+	}
+
+	public String sairSessao() throws Exception {
+
+		if (userBean.isLogado()) {
+			try {
+				userDao.gravarTimestamp(userBean.getUserLogado());
+				
+				/*userBean.setUserLogado(null);
+				*/
+				userBean.setLogado(false);
+				
+				//testando
+				 FacesContext context = FacesContext.getCurrentInstance();
+				 context.getExternalContext().invalidateSession();
+
+				// remover sessão do manage bean selecionado
+				/*
+				 * FacesContext.getCurrentInstance().getExternalContext()
+				 * .getSessionMap().remove("userBean");
+				 */
+
+			} catch (Exception ex) {
+				// TODO: handle exception
+			}
+
+			return "/pages/login_index.xhtml";
+		} else {
+
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+		}
 
 	}
 
@@ -32,14 +173,6 @@ public class PanelUser implements Serializable {
 
 	public void setUserBean(UserBean userBean) {
 		this.userBean = userBean;
-	}
-
-	public String getSessaoAtiva() {
-		return sessaoAtiva;
-	}
-
-	public void setSessaoAtiva(String sessaoAtiva) {
-		this.sessaoAtiva = sessaoAtiva;
 	}
 
 }

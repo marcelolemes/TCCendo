@@ -10,15 +10,16 @@
 </h:head>
 <h:outputStylesheet library="css" name="estilo.css" />
 <body>
-<f:metadata> 
-<f:viewAction action="#{userBean.verificarLogado()}"/> 
-</f:metadata> 
+<f:metadata>
+		<f:viewAction action="#{panelUser.verificarLogado()}"/>
+	</f:metadata>
+	 
 	<h:form id="user">
 		<p:growl id="growl" showDetail="true" />
 		<p:panel styleClass="center">
 			<p:panelGrid columns="2" styleClass="semBorda">
 				<p:outputLabel value="Usuário da sessão" />
-				<p:outputLabel value="#{panelUser.userBean.sessao}" />
+				<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}" />
 				<p:outputLabel value="serviço atual" />
 				<p:outputLabel value="#{panelUser.userBean.userLogado.servicoatual}" />
 				<p:outputLabel value="ultimo serviço" />
