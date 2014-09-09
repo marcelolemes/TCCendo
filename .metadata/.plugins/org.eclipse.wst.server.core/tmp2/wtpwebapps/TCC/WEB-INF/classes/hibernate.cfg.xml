@@ -12,6 +12,7 @@
 		</property>
 		<property name="hibernate.connection.url">
 			jdbc:mysql://localhost:3306/login
+			
 		</property>
 		<property name="hibernate.connection.driver_class">
 			com.mysql.jdbc.Driver

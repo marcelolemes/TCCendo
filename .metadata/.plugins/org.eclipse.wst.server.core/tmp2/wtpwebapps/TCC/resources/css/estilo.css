@@ -31,6 +31,17 @@
 .center {
 	position: absolute;
 	right: 40%;
-	top: 30% 
+	top: 30%
+}
+
+.ui-button {
 	
+}
+
+.ui-button-text-only .ui-button-text {
+	
+}
+
+.button:hover {
+
 }

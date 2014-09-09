@@ -11,38 +11,50 @@
 <h:outputStylesheet library="css" name="estilo.css" />
 <body>
 
-	<p:messages showDetail="true" autoUpdate="true"
-		closable="true" showIcon="false" />
 
 	<form id="cursos">
-		<p:dataTable var="contrato" value="#{listarCursos.listaContrato}">
-			<p:column headerText="Contrato" width="10%">
-				<h:outputText value="#{contrato.numeroContrato}" />
-			</p:column>
+		<div class="ui-grid ui-grid-responsive">
+			<div class="ui-grid-row">
+				<p:dataTable var="contrato" value="#{listarCursos.listaContrato}"
+					resizableColumns="true" style="margin-bottom:20px">
+					<p:column headerText="Contrato" width="6%">
+						<h:outputText value="#{contrato.numeroContrato}" />
+					</p:column>
 
-			<p:column headerText="Curso">
-				<h:outputText value="#{contrato.curso}" />
-			</p:column>
+					<p:column headerText="Curso">
+						<h:outputText value="#{contrato.curso}" />
+					</p:column>
+					<p:column headerText="Entidade">
+						<h:outputText value="#{contrato.entidade}" />
+					</p:column>
+					<p:column headerText="Ficha">
+						<h:outputText value="#{contrato.ficha}" />
+					</p:column>
+					<p:column headerText="Data Prazo" width="10%">
+						<h:outputText value="#{contrato.dataPrazo}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+					<p:column headerText="Status" width="18%">
+						<p:selectOneMenu value="#{contrato.status}">
+							<f:selectItems
+								value="#{cadastrarContratoBean.metricas.statusContratoLista}" />
+						</p:selectOneMenu>
+					</p:column>
+					<p:column headerText="Urgência">
+						<p:selectOneMenu value="#{contrato.urgencia}">
+							<f:selectItems
+								value="#{cadastrarContratoBean.metricas.urgenciaLista}" />
+						</p:selectOneMenu>
+					</p:column>¨
+				</p:dataTable>
+			</div>
+		</div>
 
-			<p:column headerText="Data Prazo" width="10%">
-				<h:outputText value="#{contrato.dataPrazo}">
-				<f:convertDateTime pattern="dd/MM/yyyy"/>
-				</h:outputText>
-			</p:column>
+		<p:dialog header="Basic Dialog" widgetVar="contD" minHeight="40">
+			<h:outputText value="Resistance to PrimeFaces is futile!" />
+		</p:dialog>
 
-			<p:column headerText="Status">
-				<p:selectOneMenu value="#{contrato.status}">
-					<f:selectItems
-						value="#{cadastrarContratoBean.metricas.statusContratoLista}" />
-				</p:selectOneMenu>
-			</p:column>
-			<p:column headerText="Urgência">
-				<p:selectOneMenu value="#{contrato.urgencia}">
-					<f:selectItems
-						value="#{cadastrarContratoBean.metricas.urgenciaLista}" />
-				</p:selectOneMenu>
-			</p:column>
-		</p:dataTable>
 		<p:commandButton value="Atualizar"
 			action="#{listarCursos.atualizar()}" process="@all" update="@all"
 			immediate="true">
