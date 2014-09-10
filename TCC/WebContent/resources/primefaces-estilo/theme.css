@@ -7892,26 +7892,23 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 }
 
 .ui-menu.ui-widget a { /*config interna menu*/
-	border: 1px solid #000;
 	overflow: visible !important;
 	background-color: #fff;
-	padding: 20px;
-	border: none !important;
-	display: block;
+	margin: 0, -4 px, -4px;
 	clear: both;
 	font-weight: bold;
 	color: #333333;
 	white-space: nowrap;
 	display: block;
+	border: none !important;
 }
 
 .ui-menu tr,.ui-menu td { /*linhas e colunas dos widgets*/
 	/*config interna menu*/
 	overflow: visible !important;
-	background-color: gray;
+	background-color: #fff;
 	padding: 20px;
 	border: none !important;
-	display: block;
 	clear: both;
 	font-weight: bold;
 	color: #333333;
@@ -8005,12 +8002,13 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	box-shadow: none !important;
 }
 
-.ui-spinner,.ui-selectonemenu-label,.ui-selectonemenu-trigger,.ui-selectonemenu-items
+.ui-spinner,.ui-selectonemenu-label,.ui-selectonemenu-items
 	{
 	/* interior dos menus selectonemenu */
 	color: #000;
 	font-weight: bold;
-	font-size: 21px;
+	font-size: 18px;
+	font-style: italic;
 	background-color: #fff;
 	overflow: visible !important;
 }
