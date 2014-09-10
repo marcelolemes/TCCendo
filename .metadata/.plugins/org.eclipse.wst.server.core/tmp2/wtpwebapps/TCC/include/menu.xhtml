@@ -16,23 +16,20 @@
 			<p:messages id="messages" showDetail="true" autoUpdate="true"
 				closable="true" showIcon="false" />
 			<p:menubar>
-				<p:submenu label="Usuário">
-					<p:menuitem value="Encerrar Sessão"
-						action="#{userBean.sairSessao()}" />
+				<p:submenu label="Contratos">
+					<p:menuitem value="Visualizar Contratos"
+						action="#{panelUser.btVisualizarCursos()}" />
+					<p:menuitem value="Cadastrar Contratos"
+						action="#{panelUser.btCadastrarCursos()}" />
 				</p:submenu>
 
-				<p:submenu label="Contratos">
-					<p:menuitem value="Visualizar Contratos" action="#{userBean.btVisualizarCursos()}" />
-					<p:menuitem value="Cadastrar Contratos" action="#{userBean.btCadastrarCursos()}" />
-				</p:submenu>
-				
 
 				<p:submenu label="SysAdmin">
 					<p:menuitem value="Cadastrar Usuário"
-						action="#{userBean.btCadastro()}" />
+						action="#{panelUser.btCadastro()}" />
 
 					<p:menuitem value="Usuários Cadastrados"
-						action="#{userBean.btListarUers()}" />
+						action="#{panelUser.btListarUsers()}" />
 				</p:submenu>
 
 			</p:menubar>

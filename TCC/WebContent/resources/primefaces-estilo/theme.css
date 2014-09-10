@@ -144,6 +144,7 @@ box-shadow:inset 03px 5px rgba(0,0,0,0.125
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled= false);
 	background-repeat: repeat-x;
 	border-color: #e38d13
+	background-color: #fff;
 }
 
 .ui-button-warning:hover,.ui-button-warning:focus {
@@ -298,6 +299,8 @@ box-shadow:inset 03px 5px rgba(0,0,0,0.125
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7',
 		endColorstr='#ffb9def0', GradientType=0);
 	border-color: #9acfea
+	background-color: #fff;
+	overflow: visible !important;
 }
 
 .alert-warning {
@@ -488,8 +491,6 @@ html {
 
 body { /*fundo corpo*/
 	margin: 0;
-	background-image:
-		url("#{resources['primefaces-estilo:images/FUNDO.jpg']}");
 }
 
 }
@@ -526,6 +527,22 @@ audio
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -538,7 +555,23 @@ audio
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -565,7 +598,23 @@ controls
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -601,7 +650,31 @@ display
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -625,7 +698,31 @@ display
 
 
 
+
+
+
+
+
+
+
+
 none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -672,6 +769,22 @@ height
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -684,7 +797,23 @@ height
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -778,6 +907,22 @@ svg
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -790,7 +935,23 @@ svg
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -815,7 +976,23 @@ svg
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -851,7 +1028,31 @@ overflow
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -875,7 +1076,31 @@ overflow
 
 
 
+
+
+
+
+
+
+
+
 hidden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1088,7 +1313,6 @@ body {
 	line-height: 1.428571429;
 	color: #333;
 	/*background-color: #fff*/
-	
 }
 
 input,button,select,textarea {
@@ -3270,6 +3494,22 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -3282,7 +3522,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3307,7 +3563,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3332,7 +3604,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3357,7 +3645,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3382,7 +3686,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3408,7 +3728,23 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
+
+
+
+
 	
+
+
+
+
+
+
+
+
 
 
 
@@ -3444,6 +3780,22 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3456,7 +3808,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3499,7 +3867,39 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3534,7 +3934,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3559,7 +3975,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3584,7 +4016,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3609,7 +4057,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3645,6 +4109,22 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3657,7 +4137,23 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3693,6 +4189,22 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3705,7 +4217,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3744,7 +4272,39 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :last-child
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3779,7 +4339,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3804,7 +4380,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3842,7 +4434,31 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
+
+
+
+
+
+
+
+
 
 
 
@@ -3867,6 +4483,14 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
 (
 :first-child
 
@@ -3880,7 +4504,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3916,6 +4556,22 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3928,7 +4584,23 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -3964,6 +4636,22 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -3976,7 +4664,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4091,6 +4795,22 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -4103,7 +4823,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4128,7 +4864,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4153,7 +4905,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4178,7 +4946,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4214,6 +4998,22 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4226,7 +5026,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4265,7 +5081,39 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4300,7 +5148,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4325,7 +5189,23 @@ border-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4361,7 +5241,31 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -4385,8 +5289,32 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
 4
 px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4433,6 +5361,22 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4445,7 +5389,23 @@ border-bottom-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4481,7 +5441,31 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -4505,11 +5489,35 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
 0
 }
 .ui-button-group-vertical
 >
 .ui-button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4555,6 +5563,22 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :not
 
 
@@ -4567,7 +5591,23 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4592,7 +5632,23 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4628,7 +5684,31 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -4652,8 +5732,32 @@ border-bottom-left-radius
 
 
 
+
+
+
+
+
+
+
+
 4
 px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4700,6 +5804,22 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4712,7 +5832,23 @@ border-top-right-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -4748,6 +5884,22 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
 
 
@@ -4760,7 +5912,23 @@ border-top-left-radius
 
 
 
+
+
+
+
+
+
+
+
  
+
+
+
+
+
+
+
+
 
 
 
@@ -6143,450 +7311,6 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	display: table-cell
 }
 
-.input-group-addon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:not
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-(
-:first-child
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-)
-:not
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-(
-:last-child
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-),
-.input-group-btn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:not
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-(
-:first-child
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-)
-:not
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-(
-:last-child
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-),
-.input-group
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-.form-control
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:not
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-(
-:first-child
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-)
-:not
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-(
-:last-child
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-){
-border-radius
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-0
-}
 .input-group-addon,.input-group-btn {
 	width: 1%;
 	white-space: nowrap;
@@ -7149,31 +7873,58 @@ border-radius
 
 .ui-menu.ui-widget { /*config menu*/
 	min-width: 160px;
-	padding: 5px 2px;
+	padding: 5px;
 	opacity: 1;
 	overflow: visible !important;
 	background-color: #ffffff;
-	border: 1px solid #ccc;
+	/*)border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	*border-right-width: 2px;
 	*border-bottom-width: 2px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
-	border-radius: 6px;
+	border-radius: 2px;*/
+	border: none !important;
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
+	-webkit-background-clip: padding-box;
 }
 
 .ui-menu.ui-widget a { /*config interna menu*/
-	background-color: #ffffff;
+	border: 1px solid #000;
+	overflow: visible !important;
+	background-color: #fff;
 	padding: 20px;
+	border: none !important;
 	display: block;
 	clear: both;
 	font-weight: bold;
 	color: #333333;
 	white-space: nowrap;
+	display: block;
 }
+
+.ui-menu tr,.ui-menu td { /*linhas e colunas dos widgets*/
+	/*config interna menu*/
+	overflow: visible !important;
+	background-color: gray;
+	padding: 20px;
+	border: none !important;
+	display: block;
+	clear: both;
+	font-weight: bold;
+	color: #333333;
+	white-space: nowrap;
+	display: block;
+}
+
+
+
+.ui-widget tr,.ui-widget tr{ /*linhas e colunas dos widgets*/
+	border: none !important;
+}
+
 
 .ui-menu.ui-widget li.ui-corner-all,.ui-menu.ui-widget a.ui-corner-all {
 	-webkit-border-radius: 0;
@@ -7252,4 +8003,14 @@ border-radius
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
+}
+
+.ui-spinner,.ui-selectonemenu-label,.ui-selectonemenu-trigger,.ui-selectonemenu-items
+	{
+	/* interior dos menus selectonemenu */
+	color: #000;
+	font-weight: bold;
+	font-size: 21px;
+	background-color: #fff;
+	overflow: visible !important;
 }

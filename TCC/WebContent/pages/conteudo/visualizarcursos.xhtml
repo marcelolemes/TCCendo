@@ -16,7 +16,7 @@
 		<div class="ui-grid ui-grid-responsive">
 			<div class="ui-grid-row">
 				<p:dataTable var="contrato" value="#{listarCursos.listaContrato}"
-					resizableColumns="true" style="margin-bottom:20px">
+					resizableColumns="true" style="margin-bottom:20px" sortBy="#{contrato.urgencia}" >
 					<p:column headerText="Contrato" width="6%">
 						<h:outputText value="#{contrato.numeroContrato}" />
 					</p:column>

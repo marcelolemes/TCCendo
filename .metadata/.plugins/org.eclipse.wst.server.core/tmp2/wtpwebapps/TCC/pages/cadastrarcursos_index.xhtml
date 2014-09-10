@@ -13,15 +13,18 @@
 		<title></title>
 	</h:head>
 	<h:outputStylesheet library="css" name="estilo.css" />
-	<f:metadata>
-		<f:viewAction action="#{panelUser.verificarLogado()}" />
+<f:metadata>
+		<f:viewAction action="#{panelUser.verificarLogado()}"/>
 	</f:metadata>
 	<body>
-		<p:messages id="messages" showDetail="true" autoUpdate="true"
-			closable="true" showIcon="false" />
+		<p:messages showDetail="true" autoUpdate="true" closable="true"
+			showIcon="false" />
 
+		<ui:define name="menu">
+			<ui:include src="/include/menu.xhtml" />
+		</ui:define>
 		<ui:define name="content">
-			<ui:include src="/Login/login.xhtml" />
+			<ui:include src="/pages/conteudo/cadastrocurso.xhtml" />
 		</ui:define>
 	</body>
 </ui:composition>

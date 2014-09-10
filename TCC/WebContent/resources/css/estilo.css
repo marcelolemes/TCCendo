@@ -3,13 +3,13 @@
 .ui-layout-north {
 	z-index: 20 !important;
 	overflow: visible !important;
-	border: none !important;
+	/*border: none !important;*/
 }
 
 .ui-layout-north .ui-layout-unit-content {
 	z-index: 20 !important;
 	overflow: visible !important;
-	border: none !important;
+	/*border: none !important;*/
 	opacity: 1;
 }
 
@@ -35,6 +35,14 @@
 	top: 30%
 }
 
+.panecentral {
+	background-color: #fff; 
+	position: absolute;
+	right: 40%;
+	top: 30%;
+	border: 1px solid #000
+}
+
 .ui-button {
 	
 }
@@ -48,7 +56,6 @@
 }
 
 .button-login,.ui-button-login {
-	
 	font-size: 20px ! important;
 	/*background-color: #000 ! important;*/
 	height: 50px ! important;
@@ -62,8 +69,7 @@
 	width: 300px ! important;
 }
 
-.titulologin{
+.titulologin {
 	font-size: 50px ! important;
 	font-style: bold ! important;
-	
 }

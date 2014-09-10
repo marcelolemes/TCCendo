@@ -63,7 +63,7 @@ public class PanelUser implements Serializable {
 	public String btCadastro() {
 
 		if (userBean.isLogado()) {
-			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+			if (userBean.getUserLogado().getNivelAcesso() < 4) {
 
 				userBean.autoridadeInsuficiente();
 				// return "result.xhtml";
@@ -101,7 +101,7 @@ public class PanelUser implements Serializable {
 
 	}
 
-	public String btListarUers() {
+	public String btListarUsers() {
 
 		if (userBean.isLogado()) {
 			if (userBean.getUserLogado().getNivelAcesso() < 3) {

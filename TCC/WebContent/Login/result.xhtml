@@ -6,17 +6,22 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title></title>
+	
+	<style type="text/css">
+body {
+	background-image: url(/resources/images/fundo.png) !important;
+	}
+</style>
 </h:head>
 <h:outputStylesheet library="css" name="estilo.css" />
 <body>
-<f:metadata>
-		<f:viewAction action="#{panelUser.verificarLogado()}"/>
+	<f:metadata>
+		<f:viewAction action="#{panelUser.verificarLogado()}" />
 	</f:metadata>
-	 
+	 <h:graphicImage value="/resources/images/fundo.png" width="100%" height="100%" />
 	<h:form id="user">
 		<p:growl id="growl" showDetail="true" />
-		<p:panel styleClass="center">
+		<p:panel styleClass="panecentral">
 			<p:panelGrid columns="2" styleClass="semBorda">
 				<p:outputLabel value="Usuário da sessão" />
 				<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}" />
@@ -31,9 +36,9 @@
 				<p:outputLabel value="#{panelUser.userBean.userLogado.ultimoacesso}" />
 			</p:panelGrid>
 			<p:panelGrid columns="1" styleClass="semBorda">
-						<p:commandButton value="Atualizar" action="#{userBean.atualizar()}"
+				<p:commandButton value="Logoff" action="#{panelUser.sairSessao()}"
 					update="@all" process="@this" />
-				
+
 			</p:panelGrid>
 		</p:panel>
 	</h:form>
