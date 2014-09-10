@@ -8,7 +8,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
-import javax.servlet.http.HttpSession;
 
 import br.com.login.Dao.UserDao;
 import br.com.login.model.Metricas;
@@ -27,7 +26,7 @@ public class UserBean implements Serializable {
 	public UserBean() {
 
 		user = new User();
-		logado = false;
+		user.setLogado(false);
 		
 	}
 
@@ -55,11 +54,9 @@ public class UserBean implements Serializable {
 	}
 
 	public String logar() throws Exception {
-		if (logado) {
+		if (user.isLogado()) {
 			loginAtivo();
-			HttpSession sessao = (HttpSession) FacesContext
-					.getCurrentInstance().getExternalContext().getSession(true);
-			
+						
 			return "/pages/result_index.xhtml";
 
 		} else {
@@ -67,21 +64,28 @@ public class UserBean implements Serializable {
 			if ((userLogado = userDao.testarLogin(user)) != null) {
 				System.out.print(" Encontrado ");
 				setSessao(user.getApelido());
-				logado = true;
 				user = new User();
-
+				user.setLogado(true);
 				return messageSucessoLogin();
 
 			} else {
 				System.out.print("Não encontrado");
 				user = new User();
-				logado = false;
+				user.setLogado(false);
 				messageErroLogin();
 			}
 			return null;
 		}
 	}
-	
+	public String verificarLogado() throws Exception {
+
+		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
+
+			return "/pages/result_index.xhtml";
+		} else {
+			return "/pages/login_index.xhtml";
+		}
+	}
 	
 	
 	public String gravar() {
@@ -90,6 +94,7 @@ public class UserBean implements Serializable {
 			if (userDao.Gravar(user)) {
 				messageSucessoGravar();
 				user = new User();
+				user.setLogado(true);
 			}
 			return "/pages/result_index.xhtml";
 
@@ -117,6 +122,16 @@ public class UserBean implements Serializable {
 				null,
 				new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Ativo",
 						"Sessão ainda ativa para o usuário:  " + sessao));
+		// return "result.xhtml";
+		return "/pages/result_index.xhtml";
+
+	}
+	
+	public String reiniciarsessão() {
+		FacesContext.getCurrentInstance().addMessage(
+				null,
+				new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Ativo",
+						"Sessão ativa reiniciada:  " + sessao));
 		// return "result.xhtml";
 		return "/pages/result_index.xhtml";
 

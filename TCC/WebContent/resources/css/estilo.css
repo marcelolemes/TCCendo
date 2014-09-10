@@ -81,3 +81,13 @@
 	border-radius: 50%;
 	margin: 0 auto 10px;
 }
+
+.calendar {
+	background-color: #fff;	
+	display: block;
+	overflow: visible !important;	
+	color: #000;
+}
+.ui-layout{
+	background-color: #ccc !important;	
+}

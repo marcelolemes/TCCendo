@@ -22,11 +22,12 @@
 				<p:outputLabel value="Senha" />
 				<p:password value="#{userBean.user.senha}" />
 				<p:outputLabel value="Nível de acesso" />
-				<p:selectOneMenu id="nivelacessoinput" value="#{userBean.user.nivelAcesso}">
+				<p:selectOneMenu id="nivelacessoinput"
+					value="#{userBean.user.nivelAcesso}">
 					<f:selectItems value="#{userBean.nivelAcessoCadastro}" />
 				</p:selectOneMenu>
 
-				
+
 			</p:panelGrid>
 			<p:commandButton value="Gravar" action="#{userBean.gravar()}"
 				update="@all" />

@@ -29,19 +29,11 @@ public class PanelUser implements Serializable {
 
 	}
 
-	public String verificarLogado() throws Exception {
-
-		if (userBean.isLogado() && (userBean.getUserLogado() != null)) {
-
-			return "/pages/result_index.xhtml";
-		} else {
-			return "/pages/login_index.xhtml";
-		}
-	}
+	
 
 	public String btVisualizarCursos() {
 
-		if (userBean.isLogado()) {
+		if (userBean.getUser().isLogado()) {
 			if (userBean.getUserLogado().getNivelAcesso() < 0) {
 
 				userBean.autoridadeInsuficiente();
@@ -62,7 +54,7 @@ public class PanelUser implements Serializable {
 
 	public String btCadastro() {
 
-		if (userBean.isLogado()) {
+		if (userBean.getUser().isLogado()) {
 			if (userBean.getUserLogado().getNivelAcesso() < 4) {
 
 				userBean.autoridadeInsuficiente();
@@ -83,7 +75,7 @@ public class PanelUser implements Serializable {
 
 	public String btCadastrarCursos() {
 
-		if (userBean.isLogado()) {
+		if (userBean.getUser().isLogado()) {
 			if (userBean.getUserLogado().getNivelAcesso() < 0) {
 
 				userBean.autoridadeInsuficiente();
@@ -103,7 +95,7 @@ public class PanelUser implements Serializable {
 
 	public String btListarUsers() {
 
-		if (userBean.isLogado()) {
+		if (userBean.getUser().isLogado()) {
 			if (userBean.getUserLogado().getNivelAcesso() < 3) {
 
 				userBean.autoridadeInsuficiente();
@@ -126,27 +118,29 @@ public class PanelUser implements Serializable {
 		// remover sessão do manage bean selecionado
 		// FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("userBean");
 		/*
-		userBean.setUserLogado(null);
+		 * userBean.setUserLogado(null); userBean.setLogado(false);
+		 */
 		userBean.setLogado(false);
-	*/
-		userBean.setLogado(false);
-		 FacesContext context = FacesContext.getCurrentInstance();
-		 context.getExternalContext().invalidateSession();
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.getExternalContext().invalidateSession();
 	}
 
 	public String sairSessao() throws Exception {
 
-		if (userBean.isLogado()) {
+		if (userBean.getUser().isLogado()) {
 			try {
-				userDao.gravarTimestamp(userBean.getUserLogado());
-				
-				/*userBean.setUserLogado(null);
-				*/
 				userBean.setLogado(false);
 				
-				//testando
-				 FacesContext context = FacesContext.getCurrentInstance();
-				 context.getExternalContext().invalidateSession();
+				userDao.gravarTimestamp(userBean.getUserLogado());
+
+				/*
+				 * userBean.setUserLogado(null);
+				 */
+				
+
+				// testando
+				FacesContext context = FacesContext.getCurrentInstance();
+				context.getExternalContext().invalidateSession();
 
 				// remover sessão do manage bean selecionado
 				/*

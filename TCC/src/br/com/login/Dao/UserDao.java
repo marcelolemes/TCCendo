@@ -13,6 +13,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import br.com.login.bean.UserBean;
 import br.com.login.model.User;
 import br.com.login.util.HibernateUtil;
 
@@ -40,6 +41,7 @@ public class UserDao implements Serializable {
 		criteria.add(Restrictions.eq("apelido", user.getApelido()));
 		user.setUltimoacesso(new Timestamp(new Date(System.currentTimeMillis())
 				.getTime()));
+		user.setLogado(false);
 		sessao.update(user);
 		transacao.commit();
 		sessao.close();
@@ -56,19 +58,31 @@ public class UserDao implements Serializable {
 		if (resultado != null) {
 			if (resultado.getSenha() != null) {
 				if (resultado.getSenha().equals(user.getSenha())) {
-					sessao.close();
+					if (resultado.isLogado()) {
+						new UserBean().reiniciarsessão();
+						sessao.close();
+						return resultado;
+					} else {
+						resultado.setLogado(true);
+						sessao.update(resultado);
+						transacao.commit();
+						sessao.close();
+						return resultado;
+					}
 
-					return resultado;
-				} else
+				} else {
 					sessao.close();
-				return null;
+					return null;
+				}
 
-			} else
+			} else {
 				sessao.close();
-			return null;
-		} else
+				return null;
+			}
+		} else {
 			sessao.close();
-		return null;
+			return null;
+		}
 
 	}
 
@@ -126,7 +140,7 @@ public class UserDao implements Serializable {
 					sessao.close();
 					return false;
 				} else {
-
+					user.setLogado(false);
 					sessao.saveOrUpdate(user);
 					transacao.commit();
 					sessao.close();

@@ -35,6 +35,8 @@ public class User implements Serializable {
 	private String servicoanterior;
 	@Column
 	private Timestamp ultimoacesso;
+	@Column
+	private boolean logado;
 
 	public Timestamp getUltimoacesso() {
 		return ultimoacesso;
@@ -90,6 +92,22 @@ public class User implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public int getNivelacesso() {
+		return nivelacesso;
+	}
+
+	public void setNivelacesso(int nivelacesso) {
+		this.nivelacesso = nivelacesso;
+	}
+
+	public boolean isLogado() {
+		return logado;
+	}
+
+	public void setLogado(boolean logado) {
+		this.logado = logado;
 	}
 
 }
