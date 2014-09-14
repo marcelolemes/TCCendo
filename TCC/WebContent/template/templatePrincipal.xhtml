@@ -9,14 +9,15 @@
 	<h:outputStylesheet library="css" name="modelo.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>MegaPixel</title>
-	<link rel="shortcut icon" type="image/x-icon" href="/resources/images/icone.ico"/>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="/resources/images/icone.ico" />
 </h:head>
 <body>
 	<p:layout fullPage="true">
 		<p:layoutUnit position="north">
 			<ui:insert name="menu" />
 		</p:layoutUnit>
-		<p:layoutUnit position="center">
+		<p:layoutUnit position="center" resizable="true">
 			<ui:insert name="content" />
 		</p:layoutUnit>
 	</p:layout>

@@ -9,57 +9,148 @@
 	<title></title>
 </h:head>
 <h:outputStylesheet library="css" name="estilo.css" />
+<h:outputStylesheet library="css" name="dialog.css" />
 <body>
 
+	<p:messages showDetail="true" autoUpdate="true" closable="true" />
+	<h:form id="cursos">
+		<p:dataTable id="contratos" var="contrato"
+			value="#{listarCursos.listaContrato}" resizableColumns="true"
+			style="margin-bottom:20px" sortBy="#{contrato.urgencia}"
+			widgetVar="cursosTable" styleClass="ui-state-default"
+			rowKey="#{contrato.cod}" emptyMessage="Nenhum contrato encontrado."
+			filteredValue="#{listarCursos.contratosFiltrados}"
+			draggableColumns="true">
+			<p:column style="width:32px;text-align: center" width="30px">
+				<p:commandButton styleClass="botao-edit" value="Editar"
+					update=":cursos:contratoEditar"
+					oncomplete="PF('contratoEdit').show()" icon="ui-icon-search"
+					title="Editar">
+					<f:setPropertyActionListener value="#{contrato}"
+						target="#{listarCursos.contratoSelecionado}" />
+				</p:commandButton>
+			</p:column>
+			<p:column style="width:32px;text-align: center" width="30px">
+				<p:commandButton styleClass="botao-info" value="Info"
+					update=":cursos:contratoDetalhe"
+					oncomplete="PF('contratoDialogo').show()" icon="ui-icon-search"
+					title="Info">
+					<f:setPropertyActionListener value="#{contrato}"
+						target="#{listarCursos.contratoSelecionado}" />
+				</p:commandButton>
+			</p:column>
+			<p:column headerText="Contrato" width="9%"
+				filterBy="#{contrato.numeroContrato}" filterMatchMode="contains"
+				sortBy="#{contrato.numeroContrato}">
+				<h:outputText value="#{contrato.numeroContrato}" />
+			</p:column>
+			<p:column headerText="Curso" filterBy="#{contrato.curso}"
+				filterMatchMode="contains" sortBy="#{contrato.curso}">
+				<h:outputText value="#{contrato.curso}" />
+			</p:column>
+			<p:column headerText="Cidade" filterBy="#{contrato.cidade}"
+				filterMatchMode="contains" sortBy="#{contrato.cidade}">
+				<h:outputText value="#{contrato.cidade}" />
+			</p:column>
+			<p:column headerText="Ficha" width="8%">
+				<h:outputText value="#{contrato.ficha}" />
+			</p:column>
+			<p:column headerText="Status" width="20%" sortBy="#{contrato.status}">
+				<h:outputText value=" #{listarCursos.parserStatus(contrato)}" />
+			</p:column>
+			<p:column headerText="Urgência" width="15%"
+				sortBy="#{contrato.urgencia}">
+				<h:outputText value="#{listarCursos.parserUrgencia(contrato)}" />
+			</p:column>
 
-	<form id="cursos">
-		<div class="ui-grid ui-grid-responsive">
-			<div class="ui-grid-row">
-				<p:dataTable var="contrato" value="#{listarCursos.listaContrato}"
-					resizableColumns="true" style="margin-bottom:20px" sortBy="#{contrato.urgencia}" >
-					<p:column headerText="Contrato" width="6%">
-						<h:outputText value="#{contrato.numeroContrato}" />
-					</p:column>
-
-					<p:column headerText="Curso">
-						<h:outputText value="#{contrato.curso}" />
-					</p:column>
-					<p:column headerText="Entidade">
-						<h:outputText value="#{contrato.entidade}" />
-					</p:column>
-					<p:column headerText="Ficha">
-						<h:outputText value="#{contrato.ficha}" />
-					</p:column>
-					<p:column headerText="Data Prazo" width="10%">
-						<h:outputText value="#{contrato.dataPrazo}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
-					</p:column>
-					<p:column headerText="Status" width="18%">
-						<p:selectOneMenu value="#{contrato.status}">
-							<f:selectItems
-								value="#{cadastrarContratoBean.metricas.statusContratoLista}" />
-						</p:selectOneMenu>
-					</p:column>
-					<p:column headerText="Urgência">
-						<p:selectOneMenu value="#{contrato.urgencia}">
-							<f:selectItems
-								value="#{cadastrarContratoBean.metricas.urgenciaLista}" />
-						</p:selectOneMenu>
-					</p:column>¨
-				</p:dataTable>
-			</div>
-		</div>
-
-		<p:dialog header="Basic Dialog" widgetVar="contD" minHeight="40">
-			<h:outputText value="Resistance to PrimeFaces is futile!" />
-		</p:dialog>
-
-		<p:commandButton value="Atualizar"
-			action="#{listarCursos.atualizar()}" process="@all" update="@all"
-			immediate="true">
+		</p:dataTable>
+		<p:commandButton value="Atualizar" action="#" process="@all"
+			update="@all" immediate="true">
 			<p:resetInput target=":cursos" />
 		</p:commandButton>
-	</form>
+
+
+		<p:dialog header="Contrato info:" widgetVar="contratoDialogo"
+			modal="false" showEffect="fade" resizable="false" closable="true"
+			styleClass="fundobranco" closeOnEscape="true"
+			style="text-align:center;">
+			<p:outputPanel id="contratoDetalhe" style="text-align:center;">
+				<p:panelGrid columns="2"
+					rendered="#{not empty listarCursos.contratoSelecionado}">
+					<p:outputLabel value="Contrato:" />
+					<h:outputText
+						value="#{listarCursos.contratoSelecionado.numeroContrato}" />
+					<p:outputLabel value="Data Prazo:" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.dataPrazo}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+					<p:outputLabel value="Caminho:" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.caminho}" />
+					<p:outputLabel value="OBS:" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.obs}" />
+					<p:outputLabel value="Entidade:" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.entidade}" />
+
+					<p:outputLabel value="Média de fotos" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.media}" />
+				</p:panelGrid>
+			</p:outputPanel>
+		</p:dialog>
+
+		<p:dialog header="Contrato:" widgetVar="contratoEdit" modal="false"
+			showEffect="fade" resizable="false" closable="true"
+			styleClass="fundobranco" closeOnEscape="true"
+			style="text-align:center;">
+			<p:outputPanel id="contratoEditar" style="text-align:center;">
+				<p:panelGrid columns="2"
+					rendered="#{not empty listarCursos.contratoSelecionado}">
+					<p:outputLabel value="Número do contrato" />
+					<p:inputText
+						value="#{listarCursos.contratoSelecionado.numeroContrato}" />
+					<p:outputLabel value="Curso" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.curso}" />
+					<p:outputLabel value="Cidade" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.cidade}" />
+					<p:outputLabel value="Entidade" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.entidade}" />
+					<p:outputLabel value="Média" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.media}" />
+					<p:outputLabel value="Data Entrada" />
+					<p:calendar value="#{listarCursos.contratoSelecionado.dataEntrada}"
+						locale="pt" navigator="true" pattern="MM-dd-yyyy" />
+					<p:outputLabel value="Data Prazo" />
+					<p:calendar styleClass="calendar"
+						value="#{listarCursos.contratoSelecionado.dataPrazo}" locale="pt"
+						navigator="true" pattern="MM-dd-yyyy" />
+					<p:outputLabel value="Ficha" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.ficha}" />
+					<p:outputLabel value="Caminho" />
+					<p:inputText value="#{listarCursos.contratoSelecionado.caminho}" />
+					<p:outputLabel value="Status" />
+					<p:selectOneMenu value="#{listarCursos.contratoSelecionado.status}">
+						<f:selectItems
+							value="#{cadastrarContratoBean.metricas.statusContratoLista}" />
+					</p:selectOneMenu>
+					<p:outputLabel value="Urgencia" />
+					<p:selectOneMenu
+						value="#{listarCursos.contratoSelecionado.urgencia}">
+						<f:selectItems
+							value="#{cadastrarContratoBean.metricas.urgenciaLista}" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="OBS:" />
+					<p:inputTextarea value="#{listarCursos.contratoSelecionado.obs}" />
+					<p:commandButton value="Salvar"
+						action="#{listarCursos.updateContrato(listarCursos.contratoSelecionado)}"
+						oncomplete="PF('contratoEdit').hide()" update="@all" />
+					<p:commandButton value="Cancelar" process="@all" update="@all"
+						immediate="true" oncomplete="PF('contratoEdit').hide()" />
+				</p:panelGrid>
+			</p:outputPanel>
+		</p:dialog>
+
+	</h:form>
+
+
 </body>
 </html>

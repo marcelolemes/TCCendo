@@ -28,12 +28,21 @@ public class ContratoDao implements Serializable {
 		return true;
 
 	}
+	public boolean Update(Contrato contrato) throws Exception {
+		Session sessao = HibernateUtil.getSession();
+		org.hibernate.Transaction transacao = sessao.beginTransaction();
+		sessao.update(contrato);
+		transacao.commit();
+		sessao.close();
+		return true;
+
+	}
 
 	public List<Contrato> listarContratos() throws Exception {
 		Session sessao = HibernateUtil.getSession();
 		Criteria criteria = sessao.createCriteria(Contrato.class);
 		List<Contrato> listaRetorno = criteria.list();
-		// sessao.close();
+		sessao.close();
 
 		return listaRetorno;
 

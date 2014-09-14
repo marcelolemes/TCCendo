@@ -83,11 +83,53 @@
 }
 
 .calendar {
-	background-color: #fff;	
+	background-color: #fff;
 	display: block;
-	overflow: visible !important;	
+	overflow: visible !important;
 	color: #000;
 }
-.ui-layout{
-	background-color: #ccc !important;	
+
+.ui-layout {
+	background-color: #ccc !important;
+}
+
+.ui-state-default {
+	background-color: #d8e5f3;
+	font-weight: bold;
+}
+
+.fundobranco-input {
+	background-color: #fff !important;
+	font-size: 20px ! important;
+	/*background-color: #000 ! important;*/
+	height: 50px ! important;
+	width: 300px ! important;
+}
+
+.fundobranco {
+	background-color: #fff !important;
+	overflow: visible !important;
+	border: 1px solid #000
+}
+
+.ui-dialog {
+	background-color: #fff !important;
+	overflow: visible !important;
+	border: 1px solid #000
+}
+
+.ui-tooltip {
+	background-color: #fff;
+}
+
+.botao-info {
+	background-color: red !important;
+	height: 10px ! important;
+	width: 10px ! important;
+}
+
+.botao-edit {
+	background-color: yellow !important;
+	height: 10px ! important;
+	width: 10px ! important;
 }

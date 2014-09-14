@@ -12,6 +12,7 @@
 
 	<form>
 
+		<p:growl id="growl" showDetail="true" />
 		<p:dataTable var="users" value="#{listaUsuariosBean.listaUsers}">
 			<p:column headerText="Apelido">
 				<h:outputText value="#{users.apelido}" />

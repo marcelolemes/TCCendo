@@ -82,6 +82,7 @@ public class UserBean implements Serializable {
 		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
 
 			return "/pages/result_index.xhtml";
+			
 		} else {
 			return "/pages/login_index.xhtml";
 		}
@@ -154,8 +155,8 @@ public class UserBean implements Serializable {
 						new FacesMessage(FacesMessage.SEVERITY_ERROR, "Login",
 								"Usuário/Senha incorretos, por favor, tente novamente"));
 		// remover sessão do manage bean selecionado
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
-				.remove("userBean");
+//		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+//				.remove("userBean");
 	}
 
 	public void nenhumUsuario() {

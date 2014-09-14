@@ -29,7 +29,7 @@ public class UserDao implements Serializable {
 		Session sessao = HibernateUtil.getSession();
 		Criteria criteria = sessao.createCriteria(User.class);
 		criteria.add(Restrictions.eq("apelido", user.getApelido()));
-
+		sessao.close();
 		return (User) criteria.uniqueResult();
 
 	}

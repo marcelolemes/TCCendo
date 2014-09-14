@@ -143,8 +143,7 @@ box-shadow:inset 03px 5px rgba(0,0,0,0.125
 		endColorstr='#ffeb9316', GradientType=0);
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled= false);
 	background-repeat: repeat-x;
-	border-color: #e38d13
-	background-color: #fff;
+	border-color: #e38d13 background-color: #fff;
 }
 
 .ui-button-warning:hover,.ui-button-warning:focus {
@@ -298,8 +297,7 @@ box-shadow:inset 03px 5px rgba(0,0,0,0.125
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7',
 		endColorstr='#ffb9def0', GradientType=0);
-	border-color: #9acfea
-	background-color: #fff;
+	border-color: #9acfea background-color: #fff;
 	overflow: visible !important;
 }
 
@@ -543,6 +541,10 @@ audio
 
 
 
+
+
+
+
 :not
 
 
@@ -563,7 +565,11 @@ audio
 
 
 
+
+
  
+
+
 
 
 
@@ -606,7 +612,11 @@ controls
 
 
 
+
+
  
+
+
 
 
 
@@ -666,7 +676,13 @@ display
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -706,7 +722,13 @@ display
 
 
 
+
+
 none
+
+
+
+
 
 
 
@@ -785,6 +807,10 @@ height
 
 
 
+
+
+
+
 :
 
 
@@ -805,7 +831,11 @@ height
 
 
 
+
+
  
+
+
 
 
 
@@ -883,7 +913,6 @@ sub {
 img {
 	border: 0
 }
-
 
 figure {
 	margin: 1em 40px
@@ -3269,6 +3298,10 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
+
+
 :not
 
 
@@ -3289,7 +3322,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3330,7 +3367,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3371,7 +3412,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3412,7 +3457,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3453,7 +3502,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
  
+
+
 
 
 
@@ -3495,7 +3548,11 @@ input[type="submit"].ui-button-block,input[type="reset"].ui-button-block,input[t
 
 
 
+
+
 	
+
+
 
 
 
@@ -3555,6 +3612,10 @@ border-radius
 
 
 
+
+
+
+
 :
 
 
@@ -3575,7 +3636,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3642,7 +3707,15 @@ border-radius
 
 
 
+
+
+
+
 :first-child
+
+
+
+
 
 
 
@@ -3701,7 +3774,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3742,7 +3819,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3783,7 +3864,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3824,7 +3909,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3884,6 +3973,10 @@ border-bottom-right-radius
 
 
 
+
+
+
+
 :
 
 
@@ -3904,7 +3997,11 @@ border-bottom-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -3964,6 +4061,10 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
 
 
@@ -3984,7 +4085,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4047,7 +4152,15 @@ border-top-right-radius
 
 
 
+
+
+
+
 :last-child
+
+
+
+
 
 
 
@@ -4106,7 +4219,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4147,7 +4264,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4209,7 +4330,13 @@ border-top-right-radius
 
 
 
+
+
+
+
 :not
+
+
 
 
 
@@ -4250,6 +4377,8 @@ border-top-right-radius
 
 
 
+
+
 (
 :first-child
 
@@ -4271,7 +4400,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4331,6 +4464,10 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
 
 
@@ -4351,7 +4488,11 @@ border-bottom-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4411,6 +4552,10 @@ border-top-left-radius
 
 
 
+
+
+
+
 :
 
 
@@ -4431,7 +4576,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4570,6 +4719,10 @@ border-top-left-radius
 
 
 
+
+
+
+
 :not
 
 
@@ -4590,7 +4743,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4631,7 +4788,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4672,7 +4833,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4713,7 +4878,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4773,6 +4942,10 @@ border-radius
 
 
 
+
+
+
+
 :
 
 
@@ -4793,7 +4966,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4856,7 +5033,15 @@ border-radius
 
 
 
+
+
+
+
 :first-child
+
+
+
+
 
 
 
@@ -4915,7 +5100,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -4956,7 +5145,11 @@ border-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -5016,7 +5209,13 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5056,8 +5255,14 @@ border-top-right-radius
 
 
 
+
+
 4
 px
+
+
+
+
 
 
 
@@ -5136,6 +5341,10 @@ border-bottom-right-radius
 
 
 
+
+
+
+
 :
 
 
@@ -5156,7 +5365,11 @@ border-bottom-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -5216,7 +5429,13 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5256,11 +5475,17 @@ border-bottom-left-radius
 
 
 
+
+
 0
 }
 .ui-button-group-vertical
 >
 .ui-button
+
+
+
+
 
 
 
@@ -5338,6 +5563,10 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :not
 
 
@@ -5358,7 +5587,11 @@ border-bottom-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -5399,7 +5632,11 @@ border-bottom-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -5459,7 +5696,13 @@ border-bottom-left-radius
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5499,8 +5742,14 @@ border-bottom-left-radius
 
 
 
+
+
 4
 px
+
+
+
+
 
 
 
@@ -5579,6 +5828,10 @@ border-top-right-radius
 
 
 
+
+
+
+
 :
 
 
@@ -5599,7 +5852,11 @@ border-top-right-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -5659,6 +5916,10 @@ border-top-left-radius
 
 
 
+
+
+
+
 :
 
 
@@ -5679,7 +5940,11 @@ border-top-left-radius
 
 
 
+
+
  
+
+
 
 
 
@@ -7675,14 +7940,11 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	display: block;
 }
 
-
-
-.ui-widget tr,.ui-widget tr{ /*linhas e colunas dos widgets*/
+.ui-widget tr,.ui-widget tr { /*linhas e colunas dos widgets*/
 	border: none !important;
 	overflow: visible !important;
 	background-color: #fff;
 }
-
 
 .ui-menu.ui-widget li.ui-corner-all,.ui-menu.ui-widget a.ui-corner-all {
 	-webkit-border-radius: 0;
@@ -7710,7 +7972,6 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	opacity: 1;
 	text-decoration: none;
 	background-color: #0088cc;
-	background-color: #0081c2;
 	background-position: 0px;
 	background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc),
@@ -7763,15 +8024,40 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	box-shadow: none !important;
 }
 
-.ui-spinner,.ui-selectonemenu-label,.ui-selectonemenu-items
-	{
+.ui-spinner,.ui-selectonemenu-label,.ui-selectonemenu-items {
 	/* interior dos menus selectonemenu */
 	color: #000;
 	font-weight: bold;
 	font-size: 18px;
 	font-style: italic;
-	background-color: #fff;
+	background-color: #fff !important;
 	overflow: visible !important;
+}
+
+.ui-selectonemenu-trigger {
+	/* gatilho dos menus selectonemenu */
+	color: #000 !important;
+	font-weight: bold;
+	font-size: 18px;
+	font-style: italic;
+	background-color: #fff !important;
+	visibility: false;
+}
+
+.ui-datatable {
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+.ui-datatable-header,.ui-datatable-header a,.ui-datatable-header td,.ui-datatable-header tr
+	{
+	background-color: #ccc;
+}
+
+.ui-state-default /* cabeçalho componentes*/ {
 	
 }
 
+.tabela {
+	background-color: #ccc;
+}
