@@ -59,7 +59,13 @@
 			<p:column headerText="Ficha" width="8%">
 				<h:outputText value="#{contrato.ficha}" />
 			</p:column>
-			<p:column headerText="Status" width="20%" sortBy="#{contrato.status}">
+			<p:column headerText="Status" width="20%" sortBy="#{contrato.status}" filterBy="#{contrato.status}" filterMatchMode="exact">
+			<f:facet name="filter">
+                <p:selectOneMenu onchange="PF('cursosTable').filter()" >
+                 <f:selectItem itemLabel="Selecione um status" itemValue="#{null}" noSelectionOption="true" />
+                    <f:selectItems value="#{listarCursos.metricas.statusContratoLista}" />
+                </p:selectOneMenu>
+            </f:facet>
 				<h:outputText value=" #{listarCursos.parserStatus(contrato)}" />
 			</p:column>
 			<p:column headerText="Urgência" width="15%"
@@ -158,10 +164,11 @@
 				<p:resetInput target=":cursos" />
 			</p:commandButton>
 
-			<h:commandLink id="pdf">
+			<!-- <h:commandLink id="pdf">
 				<p:graphicImage url="/resources/images/excel.png" />
 				<p:dataExporter type="xls" target="contratos" fileName="Cursos" />
 			</h:commandLink>
+			 -->
 		</p:panelGrid>
 	</h:form>
 
