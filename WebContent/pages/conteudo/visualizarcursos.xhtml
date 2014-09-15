@@ -16,24 +16,25 @@
 	<h:form id="cursos">
 		<p:dataTable id="contratos" var="contrato"
 			value="#{listarCursos.listaContrato}" resizableColumns="true"
-			style="margin-bottom:20px" sortBy="#{contrato.urgencia}"
+			style="witdth:20px" sortBy="#{contrato.urgencia}"
 			widgetVar="cursosTable" styleClass="ui-state-default"
 			rowKey="#{contrato.cod}" emptyMessage="Nenhum contrato encontrado."
 			filteredValue="#{listarCursos.contratosFiltrados}"
 			draggableColumns="true">
+			
 			<p:column style="width:32px;text-align: center" width="30px">
-				<p:commandButton styleClass="botao-edit"
+				<p:commandButton id="botao-edit" styleClass="botao-edit"
 					update=":cursos:contratoEditar"
-					oncomplete="PF('contratoEdit').show()" icon="ui-icon-search"
+					oncomplete="PF('contratoEdit').show()" icon="ui-icon-wrench"
 					title="Editar">
 					<f:setPropertyActionListener value="#{contrato}"
 						target="#{listarCursos.contratoSelecionado}" />
 				</p:commandButton>
 			</p:column>
 			<p:column style="width:32px;text-align: center" width="30px">
-				<p:commandButton styleClass="botao-info" value="Info"
+				<p:commandButton  id="botao-info" styleClass="botao-info"
 					update=":cursos:contratoDetalhe"
-					oncomplete="PF('contratoDialogo').show()" icon="ui-icon-search"
+					oncomplete="PF('contratoDialogo').show()" icon="ui-icon-info"
 					title="Info">
 					<f:setPropertyActionListener value="#{contrato}"
 						target="#{listarCursos.contratoSelecionado}" />
@@ -77,6 +78,9 @@
 			<p:outputPanel id="contratoDetalhe" style="text-align:center;">
 				<p:panelGrid columns="2"
 					rendered="#{not empty listarCursos.contratoSelecionado}">
+					<p:outputLabel value="Curso:" />
+					<h:outputText
+						value="#{listarCursos.contratoSelecionado.curso}" />
 					<p:outputLabel value="Contrato:" />
 					<h:outputText
 						value="#{listarCursos.contratoSelecionado.numeroContrato}" />

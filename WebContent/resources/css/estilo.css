@@ -123,13 +123,12 @@
 }
 
 .botao-info {
-	background-color: red !important;
-	height: 10px ! important;
-	width: 10px ! important;
+	background-color: #fff !important;
+	
 }
 
 .botao-edit {
-	background-color: yellow !important;
-	height: 10px ! important;
-	width: 10px ! important;
+	background-color: #fff !important;
+	
+	
 }
