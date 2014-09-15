@@ -13,8 +13,14 @@
 	<h:outputStylesheet library="css" name="estilo.css" />
 	<body>
 		<h:form id="menu">
-		<p:messages closable="true" autoUpdate="true" showDetail="true"/>
+			<p:messages closable="true" autoUpdate="true" showDetail="true" />
+
 			<p:menubar>
+
+				<p:submenu label="Home">
+					<p:menuitem value="Painel Usuário" action="#{userBean.btHome()}" />
+				</p:submenu>
+
 				<p:submenu label="Contratos">
 					<p:menuitem value="Visualizar Contratos"
 						action="#{panelUser.btVisualizarCursos()}" />

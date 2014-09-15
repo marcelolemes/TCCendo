@@ -34,7 +34,7 @@ public class PanelUser implements Serializable {
 	public String btVisualizarCursos() {
 
 		if (userBean.getUser().isLogado()) {
-			if (userBean.getUserLogado().getNivelAcesso() < 4) {
+			if (userBean.getUserLogado().getNivelAcesso() < 2) {
 
 				userBean.autoridadeInsuficiente();
 

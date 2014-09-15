@@ -10,9 +10,11 @@
 </h:head>
 <h:outputStylesheet library="css" name="estilo.css" />
 <h:outputStylesheet library="css" name="dialog.css" />
+<f:metadata>
+	<f:viewAction action="#{userBean.verificarAutoridadeLoginVisualizarCursos()}" />
+</f:metadata>
 <body>
 
-	<p:messages showDetail="true" autoUpdate="true" closable="true" />
 	<h:form id="cursos">
 		<p:dataTable id="contratos" var="contrato"
 			value="#{listarCursos.listaContrato}" resizableColumns="true"
@@ -21,7 +23,7 @@
 			rowKey="#{contrato.cod}" emptyMessage="Nenhum contrato encontrado."
 			filteredValue="#{listarCursos.contratosFiltrados}"
 			draggableColumns="true">
-			
+
 			<p:column style="width:32px;text-align: center" width="30px">
 				<p:commandButton id="botao-edit" styleClass="botao-edit"
 					update=":cursos:contratoEditar"
@@ -32,7 +34,7 @@
 				</p:commandButton>
 			</p:column>
 			<p:column style="width:32px;text-align: center" width="30px">
-				<p:commandButton  id="botao-info" styleClass="botao-info"
+				<p:commandButton id="botao-info" styleClass="botao-info"
 					update=":cursos:contratoDetalhe"
 					oncomplete="PF('contratoDialogo').show()" icon="ui-icon-info"
 					title="Info">
@@ -79,8 +81,7 @@
 				<p:panelGrid columns="2"
 					rendered="#{not empty listarCursos.contratoSelecionado}">
 					<p:outputLabel value="Curso:" />
-					<h:outputText
-						value="#{listarCursos.contratoSelecionado.curso}" />
+					<h:outputText value="#{listarCursos.contratoSelecionado.curso}" />
 					<p:outputLabel value="Contrato:" />
 					<h:outputText
 						value="#{listarCursos.contratoSelecionado.numeroContrato}" />

@@ -32,7 +32,7 @@ public class CadastrarContratoBean implements Serializable {
 					null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravar",
 							"Gravado com sucesso"));
-			return "/pages/result_index.xhtml";
+			return "/pages/cadastrocursos_index.xhtml";
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
 					null,

@@ -88,6 +88,28 @@ public class UserBean implements Serializable {
 		}
 	}
 	
+	public String btHome() throws Exception {
+
+		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
+
+			return "/pages/result_index.xhtml";
+			
+		} else {
+			return "/pages/login_index.xhtml";
+		}
+	}
+	
+	public String verificarAutoridadeLoginVisualizarCursos() throws Exception {
+
+		if (getUserLogado().getNivelAcesso() < 2) {
+
+			return "/pages/visualizarcursos_index.xhtml";
+			
+		} else {
+			return "/pages/result_index.xhtml";
+		}
+	}
+	
 	
 	public String gravar() {
 		userDao = new UserDao();
