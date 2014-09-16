@@ -22,11 +22,12 @@
 	<h:form id="cursos">
 		<p:dataTable id="contratos" var="contrato"
 			value="#{listarCursos.listaContrato}" resizableColumns="true"
-			style="witdth:20px" sortBy="urgencia"
-			widgetVar="cursosTable" styleClass="ui-state-default"
-			rowKey="#{contrato.cod}" emptyMessage="Nenhum contrato encontrado."
+			style="witdth:20px" sortBy="urgencia" widgetVar="cursosTable"
+			styleClass="ui-state-default" rowKey="#{contrato.cod}"
+			emptyMessage="Nenhum contrato encontrado."
 			filteredValue="#{listarCursos.contratosFiltrados}"
-			draggableColumns="true">
+			draggableColumns="true" scrollRows="30" scrollable="true"
+			scrollHeight="450" liveScroll="true">
 
 			<p:column style="width:32px;text-align: center" width="30px"
 				exportable="false">
@@ -48,9 +49,8 @@
 						target="#{listarCursos.contratoSelecionado}" />
 				</p:commandButton>
 			</p:column>
-			<p:column headerText="Contrato" width="9%"
-				filterBy="numeroContrato" filterMatchMode="contains"
-				sortBy="numeroContrato">
+			<p:column headerText="Contrato" width="9%" filterBy="numeroContrato"
+				filterMatchMode="contains" sortBy="numeroContrato">
 				<h:outputText value="#{contrato.numeroContrato}" />
 			</p:column>
 			<p:column headerText="Curso" filterBy="curso"
@@ -67,7 +67,7 @@
 			<p:column headerText="Status" width="20%" sortBy="status"
 				filterBy="status" filterMatchMode="exact">
 				<f:facet name="filter">
-					<p:selectOneMenu onchange="PF('cursosTable').filter()" >
+					<p:selectOneMenu onchange="PF('cursosTable').filter()">
 						<f:selectItem itemLabel="Selecione um status" itemValue="#{null}"
 							noSelectionOption="true" />
 						<f:selectItems
@@ -76,8 +76,9 @@
 				</f:facet>
 				<h:outputText value=" #{listarCursos.parserStatus(contrato)}" />
 			</p:column>
-			<p:column headerText="Urgência" width="15%"
-				sortBy="urgencia">
+
+			
+			<p:column headerText="Urgência" width="15%" sortBy="urgencia">
 				<h:outputText value="#{listarCursos.parserUrgencia(contrato)}" />
 			</p:column>
 
@@ -114,10 +115,9 @@
 			</p:outputPanel>
 		</p:dialog>
 
-		<p:dialog header="Contrato:" widgetVar="contratoEdit" modal="false"
-			showEffect="fade" resizable="false" closable="true"
-			styleClass="fundobranco" closeOnEscape="true"
-			style="text-align:center;">
+		<p:dialog widgetVar="contratoEdit" showEffect="fade" resizable="false"
+			closable="true" styleClass="fundobranco" closeOnEscape="true"
+			modal="false" style="text-align:center; overflow:visible !important;">
 			<p:outputPanel id="contratoEditar" style="text-align:center;">
 				<p:panelGrid columns="2"
 					rendered="#{not empty listarCursos.contratoSelecionado}">
@@ -159,10 +159,10 @@
 					<p:inputTextarea value="#{listarCursos.contratoSelecionado.obs}" />
 					<p:commandButton value="Salvar"
 						action="#{listarCursos.updateContrato(listarCursos.contratoSelecionado)}"
-						oncomplete="PF('contratoEdit').hide()" update="contratos"/> <!-- Se utilizado o "update="@all"" os inputs serão resetados, e não haverão dados para executar um update com o hibernate  -->
+						oncomplete="PF('contratoEdit').hide()" update="contratos" />
 					<p:commandButton value="Cancelar" process="@all" update="@all"
 						immediate="true" oncomplete="PF('contratoEdit').hide()" />
-
+					<!-- Se utilizado o "update="@all"" os inputs serão resetados, e não haverão dados para executar um update com o hibernate  -->
 				</p:panelGrid>
 			</p:outputPanel>
 		</p:dialog>

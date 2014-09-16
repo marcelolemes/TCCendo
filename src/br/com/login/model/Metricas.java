@@ -60,10 +60,9 @@ public class Metricas implements Serializable{
 		statusContratoLista.add(new SelectItem(13,"Em Montagem"));
 		statusContratoLista.add(new SelectItem(14,"Pronto Montagem"));
 		statusContratoLista.add(new SelectItem(15,"Em impressão"));
-		statusContratoLista.add(new SelectItem(16,"Separando"));
-		statusContratoLista.add(new SelectItem(17,"Aguardando Backup"));
-		statusContratoLista.add(new SelectItem(18,"Em backup"));
-		statusContratoLista.add(new SelectItem(29,"Backup Pronto"));
+		statusContratoLista.add(new SelectItem(16,"Aguardando Backup"));
+		statusContratoLista.add(new SelectItem(17,"Em backup"));
+		statusContratoLista.add(new SelectItem(18,"Backup Pronto"));
 	}
 	
 	
