@@ -6,7 +6,8 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title></title>
+
+
 </h:head>
 <h:outputStylesheet library="css" name="estilo.css" />
 <h:outputStylesheet library="css" name="dialog.css" />
@@ -25,7 +26,8 @@
 			filteredValue="#{listarCursos.contratosFiltrados}"
 			draggableColumns="true">
 
-			<p:column style="width:32px;text-align: center" width="30px" exportable="false">
+			<p:column style="width:32px;text-align: center" width="30px"
+				exportable="false">
 				<p:commandButton id="botao-edit" styleClass="botao-edit"
 					update=":cursos:contratoEditar"
 					oncomplete="PF('contratoEdit').show()" icon="ui-icon-wrench"
@@ -34,7 +36,8 @@
 						target="#{listarCursos.contratoSelecionado}" />
 				</p:commandButton>
 			</p:column>
-			<p:column style="width:32px;text-align: center" width="30px" exportable="false">
+			<p:column style="width:32px;text-align: center" width="30px"
+				exportable="false">
 				<p:commandButton id="botao-info" styleClass="botao-info"
 					update=":cursos:contratoDetalhe"
 					oncomplete="PF('contratoDialogo').show()" icon="ui-icon-info"
@@ -59,13 +62,16 @@
 			<p:column headerText="Ficha" width="8%">
 				<h:outputText value="#{contrato.ficha}" />
 			</p:column>
-			<p:column headerText="Status" width="20%" sortBy="#{contrato.status}" filterBy="#{contrato.status}" filterMatchMode="exact">
-			<f:facet name="filter">
-                <p:selectOneMenu onchange="PF('cursosTable').filter()" >
-                 <f:selectItem itemLabel="Selecione um status" itemValue="#{null}" noSelectionOption="true" />
-                    <f:selectItems value="#{listarCursos.metricas.statusContratoLista}" />
-                </p:selectOneMenu>
-            </f:facet>
+			<p:column headerText="Status" width="20%" sortBy="#{contrato.status}"
+				filterBy="#{contrato.status}" filterMatchMode="exact">
+				<f:facet name="filter">
+					<p:selectOneMenu onchange="PF('cursosTable').filter()">
+						<f:selectItem itemLabel="Selecione um status" itemValue="#{null}"
+							noSelectionOption="true" />
+						<f:selectItems
+							value="#{listarCursos.metricas.statusContratoLista}" />
+					</p:selectOneMenu>
+				</f:facet>
 				<h:outputText value=" #{listarCursos.parserStatus(contrato)}" />
 			</p:column>
 			<p:column headerText="Urgência" width="15%"
@@ -111,7 +117,7 @@
 			styleClass="fundobranco" closeOnEscape="true"
 			style="text-align:center;">
 			<p:outputPanel id="contratoEditar" style="text-align:center;">
-				<p:panelGrid columns="2" 
+				<p:panelGrid columns="2"
 					rendered="#{not empty listarCursos.contratoSelecionado}">
 					<p:outputLabel value="Número do contrato" />
 					<p:inputText
@@ -151,7 +157,8 @@
 					<p:inputTextarea value="#{listarCursos.contratoSelecionado.obs}" />
 					<p:commandButton value="Salvar"
 						action="#{listarCursos.updateContrato(listarCursos.contratoSelecionado)}"
-						oncomplete="PF('contratoEdit').hide()" update="@all" />
+						oncomplete="PF('contratoEdit').hide()" update="@all"
+						process="@all" immediate="true" />
 					<p:commandButton value="Cancelar" process="@all" update="@all"
 						immediate="true" oncomplete="PF('contratoEdit').hide()" />
 

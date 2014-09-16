@@ -4,27 +4,22 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
-	template="/template/templatePrincipal.xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-
 	<h:head>
 		<meta http-equiv="Content-Type"
 			content="text/html; charset=ISO-8859-1" />
 		<title></title>
 	</h:head>
 	<h:outputStylesheet library="css" name="estilo.css" />
-
 	<body>
-
-		
-	<p:growl id="growl" showDetail="true" autoUpdate="true" />
-	
-	
-		<ui:define name="menu">
-			<ui:include src="/include/menu.xhtml" />
-		</ui:define>
-		<ui:define name="content">
-			<ui:include src="/Login/cadastro.xhtml" />
-		</ui:define>
+		<h:form id="footer">
+			<div style="float:right;">
+				<p:graphicImage url="/resources/images/footer.png" />
+			</div>
+			<div style="float:left;">
+			<p:outputLabel value="Usuário: "/>
+			<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}" rendered="#{not empty panelUser.userBean.userLogado.apelido}" />
+			</div>
+		</h:form>
 	</body>
 </ui:composition>

@@ -13,12 +13,11 @@
 		<title></title>
 	</h:head>
 	<h:outputStylesheet library="css" name="estilo.css" />
-<f:metadata>
-		<f:viewAction action="#{userBean.verificarLogado()}"/>
+	<f:metadata>
+		<f:viewAction action="#{userBean.verificarLogado()}" />
 	</f:metadata>
 	<body>
-		<p:messages showDetail="true" autoUpdate="true" closable="true"
-			showIcon="false" />
+		<p:growl id="growl" showDetail="true" autoUpdate="true" />
 
 		<ui:define name="menu">
 			<ui:include src="/include/menu.xhtml" />

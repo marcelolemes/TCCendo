@@ -101,7 +101,7 @@ public class UserBean implements Serializable {
 	
 	public String verificarAutoridadeLoginVisualizarCursos() throws Exception {
 
-		if (getUserLogado().getNivelAcesso() < 2) {
+		if (getUserLogado() != null  && getUserLogado().getNivelAcesso() < 2)  {
 
 			return "/pages/visualizarcursos_index.xhtml";
 			

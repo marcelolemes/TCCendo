@@ -39,8 +39,10 @@
 	background-color: #fff;
 	position: absolute;
 	right: 40%;
-	top: 30%;
-	border: 1px solid #000
+	top: 10%;
+	border: 1px solid #000;
+	
+	
 }
 
 .ui-button {
@@ -124,11 +126,10 @@
 
 .botao-info {
 	background-color: #fff !important;
-	
+	border: none !important;
 }
 
 .botao-edit {
 	background-color: #fff !important;
-	
-	
+	border: none !important;
 }

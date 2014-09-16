@@ -3,6 +3,7 @@ package br.com.login.bean;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -147,6 +148,10 @@ public class PanelUser implements Serializable {
 				 * FacesContext.getCurrentInstance().getExternalContext()
 				 * .getSessionMap().remove("userBean");
 				 */
+				FacesContext.getCurrentInstance().addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_INFO, "Logoff",
+								"Sessão encerrada"));
 
 			} catch (Exception ex) {
 				// TODO: handle exception
