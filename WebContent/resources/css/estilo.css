@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-.ui-layout-north {
+.ui-layout-north{
 	z-index: 20 !important;
 	overflow: visible !important;
 	/*border: none !important;*/
@@ -9,7 +9,20 @@
 .ui-layout-north .ui-layout-unit-content {
 	z-index: 20 !important;
 	overflow: visible !important;
-	/*border: none !important;*/
+	
+	opacity: 1;
+}
+.ui-layout-south{
+	z-index: 30 !important;
+	overflow-y: hidden !important;
+	overflow-x: hidden !important;
+	background-image: url('resources/images/footer.png');
+}
+
+.ui-layout-south .ui-layout-unit-footer {
+	z-index: 30 !important;
+	overflow-y: hidden !important;
+	overflow-x: hidden !important;
 	opacity: 1;
 }
 
@@ -41,8 +54,6 @@
 	right: 40%;
 	top: 10%;
 	border: 1px solid #000;
-	
-	
 }
 
 .ui-button {
@@ -111,7 +122,8 @@
 .fundobranco {
 	background-color: #fff !important;
 	overflow: visible !important;
-	border: 1px solid #000
+	border: 1px solid #000;
+	z-index: 50 !important
 }
 
 .ui-dialog {
