@@ -159,8 +159,7 @@
 					<p:inputTextarea value="#{listarCursos.contratoSelecionado.obs}" />
 					<p:commandButton value="Salvar"
 						action="#{listarCursos.updateContrato(listarCursos.contratoSelecionado)}"
-						oncomplete="PF('contratoEdit').hide()" update="@all"
-						process="@all" immediate="true" />
+						oncomplete="PF('contratoEdit').hide()" update="contratos"/> <!-- Se utilizado o "update="@all"" os inputs serão resetados, e não haverão dados para executar um update com o hibernate  -->
 					<p:commandButton value="Cancelar" process="@all" update="@all"
 						immediate="true" oncomplete="PF('contratoEdit').hide()" />
 
