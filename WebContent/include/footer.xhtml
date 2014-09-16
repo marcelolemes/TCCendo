@@ -5,20 +5,21 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type"
-			content="text/html; charset=ISO-8859-1" />
-		<title></title>
-	</h:head>
+
 	<h:outputStylesheet library="css" name="estilo.css" />
 	<body>
 		<h:form id="footer">
-			<div style="float:right;">
+			<div style="float: right;">
 				<p:graphicImage url="/resources/images/footer.png" />
 			</div>
-			<div style="float:left;">
-			<p:outputLabel value="Usuário: "/>
-			<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}" rendered="#{not empty panelUser.userBean.userLogado.apelido}" />
+
+			<div style="float: left;">
+				<p:panelGrid columns="3" styleClass="semBorda">
+					<p:outputLabel value="Usuário: " />
+					<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}"
+						rendered="#{not empty panelUser.userBean.userLogado.apelido}" />
+					<p:clock pattern="HH:mm:ss" mode="server" />
+				</p:panelGrid>
 			</div>
 		</h:form>
 	</body>

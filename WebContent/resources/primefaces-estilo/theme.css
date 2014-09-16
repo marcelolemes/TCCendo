@@ -1058,9 +1058,7 @@
 	background-color: #9ec4ee !important;
 }
 
-
 /* button*/
-
 .ui-button,.ui-button-default {
 	display: inline-block;
 	text-decoration: none;
@@ -1240,3 +1238,10 @@
 	background-color: #c12e2a;
 	background-image: none
 }
+
+/*
+.ui-selectonemenu,.ui-selectonemenu-items, .ui-selectonemenu-items a,.ui-selectonemenu-label {
+	overflow: visible !important;
+	display: inline-block;
+}
+*/
