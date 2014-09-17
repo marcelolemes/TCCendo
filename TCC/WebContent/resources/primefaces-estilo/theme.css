@@ -1246,11 +1246,8 @@
 	display: inline-block;
 }
 */
-.ui-clock {
-	background-color: #fff !important;
-}
 
 body .ui-layout-center .ui-layout-unit-content{
-	background: url("#{request.contextPath}/resources/images/logo.png");
+	background: url("#{request.contextPath}/resources/images/back.png");
 }
 
