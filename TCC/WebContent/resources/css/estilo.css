@@ -34,6 +34,7 @@ ui-layout-south {
 	border: none !important;
 }
 
+
 .ui-layout-center {
 	border: none !important;
 }
@@ -149,3 +150,8 @@ ui-layout-south {
 	background-color: #fff !important;
 	border: none !important;
 }
+
+.interiorTabela{ /*aqui o estilo de old dentro do seu css*/
+	background-color: #fff !important;
+}
+

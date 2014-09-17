@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -7,8 +7,8 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<h:outputStylesheet library="css" name="modelo.css" />
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Lab Monitor ©</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>PhotoLab Master</title>
 	<link rel="shortcut icon" type="image/x-icon"
 		href="#{request.contextPath}/resources/images/icone.ico" />
 </h:head>
@@ -40,7 +40,7 @@
 				</div>
 				<div style="float: left;">
 					<p:panelGrid columns="3" styleClass="semBorda">
-						<p:outputLabel value="Usuário(a): " />
+						<p:outputLabel value="UsuÃ¡rio(a): " />
 						<p:outputLabel value="#{panelUser.userBean.userLogado.apelido}"
 							rendered="#{not empty panelUser.userBean.userLogado.apelido}" />
 						<p:clock pattern="HH:mm:ss" mode="server" />

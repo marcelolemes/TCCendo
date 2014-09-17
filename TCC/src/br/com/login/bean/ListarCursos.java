@@ -32,8 +32,6 @@ public class ListarCursos implements Serializable {
 	 * 
 	 */
 
-
-
 	ContratoDao contDao = new ContratoDao();
 	private Metricas metricas = new Metricas();
 	private List<Contrato> listaContrato;
@@ -89,19 +87,24 @@ public class ListarCursos implements Serializable {
 
 	}
 
-	
-	public void preProcessPDF(Object document) throws IOException, BadElementException, DocumentException {
-        Document pdf = (Document) document;
-        pdf.open();
-        pdf.setPageSize(PageSize.A4);
- 
-        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-        String logo = servletContext.getRealPath("") + File.separator + "resources"  + File.separator + "images" + File.separator + "logo.png";
-         
-        pdf.add(Image.getInstance(logo));
-    }
-	
-	
+	public void preProcessPDF(Object document) throws IOException,
+			BadElementException, DocumentException {
+		Document pdf = (Document) document;
+		pdf.open();
+		pdf.setMargins(20f, 20f, 20f, 20f); 
+		pdf.setPageSize(PageSize.A4);
+
+		ServletContext servletContext = (ServletContext) FacesContext
+				.getCurrentInstance().getExternalContext().getContext();
+		String logo = servletContext.getRealPath("") + File.separator
+				+ "resources" + File.separator + "images" + File.separator
+				+ "logo.png";
+		Image image = Image.getInstance(logo);
+		image.setAlignment(Image.ALIGN_CENTER);
+		pdf.add(image);
+		pdf.addAuthor("FotoLab Monitor");
+	}
+
 	public ContratoDao getContDao() {
 		return contDao;
 	}
