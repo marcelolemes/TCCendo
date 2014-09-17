@@ -1,5 +1,7 @@
 package br.com.login.bean;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,10 +9,17 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 
 import br.com.login.Dao.ContratoDao;
 import br.com.login.model.Contrato;
 import br.com.login.model.Metricas;
+
+import com.lowagie.text.BadElementException;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Image;
+import com.lowagie.text.PageSize;
 
 @ManagedBean
 @ViewScoped
@@ -80,6 +89,19 @@ public class ListarCursos implements Serializable {
 
 	}
 
+	
+	public void preProcessPDF(Object document) throws IOException, BadElementException, DocumentException {
+        Document pdf = (Document) document;
+        pdf.open();
+        pdf.setPageSize(PageSize.A4);
+ 
+        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+        String logo = servletContext.getRealPath("") + File.separator + "resources"  + File.separator + "images" + File.separator + "logo.png";
+         
+        pdf.add(Image.getInstance(logo));
+    }
+	
+	
 	public ContratoDao getContDao() {
 		return contDao;
 	}

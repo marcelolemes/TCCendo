@@ -122,11 +122,11 @@
 				<p:resetInput target=":cursos" />
 			</p:commandButton>
 
-			<!-- <h:commandLink id="pdf">
-				<p:graphicImage url="/resources/images/excel.png" />
-				<p:dataExporter type="xls" target="contratos" fileName="Cursos" />
+			<h:commandLink id="pdf">
+				<p:graphicImage url="/resources/images/pdf.png" />
+				<p:dataExporter type="pdf" target="contratos" fileName="Cursos" encoding="iso-8859-1" pageOnly="true" preProcessor="#{listarCursos.preProcessPDF}"/>
 			</h:commandLink>
-			 -->
+			
 		</p:panelGrid>
 	</h:form>
 	<p:dialog widgetVar="contratoEdit" showEffect="fade" resizable="false"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -13,18 +13,28 @@
 		href="#{request.contextPath}/resources/images/icone.ico" />
 </h:head>
 <body>
+
+
+
+
 	<p:layout fullPage="true">
 		<p:layoutUnit position="north" resizable="true">
 			<ui:insert name="menu" />
 		</p:layoutUnit>
 		<p:layoutUnit position="center" resizable="true"
 			style="overflow-y: visible !important;">
+			<audio autoplay="autoplay">
+				<source src="#{request.contextPath}/resources/audio/som.mp3"
+					type="audio/mp3" />
+			</audio>
 			<p:growl showDetail="true" autoUpdate="true" />
 			<ui:insert name="content" />
 		</p:layoutUnit>
 		<p:layoutUnit position="south" resizable="true" size="10%"
 			layout="block">
+			
 			<h:form id="footer">
+				
 				<div style="float: right;">
 					<p:graphicImage url="/resources/images/footer.png" />
 				</div>
