@@ -94,6 +94,45 @@ public class PanelAdmin implements Serializable {
 		}
 
 	}
+	
+	public String btCadastrarAlbum() {
+
+		if (userBean.getUser().isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+
+				userBean.autoridadeInsuficiente();
+				return "/pages/admin/result_index.xhtml";
+			} else {
+
+				return "/pages/admin/cadastro_album_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
+	public String btListarAlbuns() {
+
+		if (userBean.getUser().isLogado()) {
+			if (userBean.getUserLogado().getNivelAcesso() < 0) {
+
+				userBean.autoridadeInsuficiente();
+				return "/pages/admin/result_index.xhtml";
+			} else {
+
+				return "/pages/admin/visualizaralbuns_index.xhtml";
+			}
+
+		} else {
+			userBean.nenhumUsuario();
+			return "/pages/login_index.xhtml";
+
+		}
+
+	}
 
 	public String btListarUsers() {
 
@@ -145,7 +184,7 @@ public class PanelAdmin implements Serializable {
 				 */
 				
 
-				// testando
+				// Sair
 				FacesContext context = FacesContext.getCurrentInstance();
 				context.getExternalContext().invalidateSession();
 

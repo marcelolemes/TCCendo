@@ -24,6 +24,11 @@
 					value="#{userBean.user.nivelAcesso}">
 					<f:selectItems value="#{userBean.nivelAcessoCadastro}" />
 				</p:selectOneMenu>
+				<p:outputLabel value="Setor" />
+				<p:selectOneMenu id="setoroinput"
+					value="#{userBean.user.setor}">
+					<f:selectItems value="#{userBean.setores}" />
+				</p:selectOneMenu>
 
 
 			</p:panelGrid>

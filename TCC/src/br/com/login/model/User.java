@@ -26,6 +26,8 @@ public class User implements Serializable {
 	@Column
 	private int nivelacesso;
 	@Column
+	private int setor;
+	@Column
 	private String apelido;
 	@Column
 	private String senha;
@@ -108,6 +110,14 @@ public class User implements Serializable {
 
 	public void setLogado(boolean logado) {
 		this.logado = logado;
+	}
+
+	public int getSetor() {
+		return setor;
+	}
+
+	public void setSetor(int setor) {
+		this.setor = setor;
 	}
 
 }

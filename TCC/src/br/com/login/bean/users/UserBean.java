@@ -24,12 +24,13 @@ public class UserBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<SelectItem> nivelAcessoCadastro = new Metricas()
 			.getNivelAcesso();
+	private List<SelectItem> setores = new Metricas().getSetores();
 
 	public UserBean() {
 
 		user = new User();
 		user.setLogado(false);
-		
+
 	}
 
 	private User user;
@@ -59,7 +60,7 @@ public class UserBean implements Serializable {
 	public String logar() throws Exception {
 		if (user.isLogado()) {
 			loginAtivo();
-						
+
 			return "/pages/admin/result_index.xhtml";
 
 		} else {
@@ -80,52 +81,51 @@ public class UserBean implements Serializable {
 			return null;
 		}
 	}
+
 	public String verificarLogado() throws Exception {
 
-		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
+		if (user.isLogado() /* && (userBean.getUserLogado() != null) */) {
 
 			return "/pages/admin/result_index.xhtml";
-			
+
 		} else {
 			return "/pages/login_index.xhtml";
 		}
 	}
-	
+
 	public String btHome() throws Exception {
 
-		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
+		if (user.isLogado() /* && (userBean.getUserLogado() != null) */) {
 
 			return "/pages/admin/result_index.xhtml";
-			
+
 		} else {
 			return "/pages/login_index.xhtml";
 		}
 	}
-	
+
 	public void btTrocarSenha() throws Exception {
 
-		if (user.isLogado() /*&& (userBean.getUserLogado() != null)*/) {
-			RequestContext context = RequestContext.getCurrentInstance();   
+		if (user.isLogado() /* && (userBean.getUserLogado() != null) */) {
+			RequestContext context = RequestContext.getCurrentInstance();
 			context.execute("PF('TrocarSenha').show()");
 
-			
 		} else {
 
 		}
 	}
-	
+
 	public String verificarAutoridadeLoginVisualizarCursos() throws Exception {
 
-		if (getUserLogado() != null  && getUserLogado().getNivelAcesso() < 2)  {
+		if (getUserLogado() != null && getUserLogado().getNivelAcesso() < 2) {
 
 			return "/pages/admin/visualizarcursos_index.xhtml";
-			
+
 		} else {
 			return "/pages/result_index.xhtml";
 		}
 	}
-	
-	
+
 	public String gravar() {
 		userDao = new UserDao();
 		try {
@@ -145,31 +145,29 @@ public class UserBean implements Serializable {
 
 	}
 
-	
 	public void mudarSenha() throws Exception {
-		if (user.getSenha().equals(senhaTemporaria)){
+		if (user.getSenha().equals(senhaTemporaria)) {
 			userLogado.setSenha(senhaTemporaria);
 			userDao.Update(userLogado);
 			messageAlteraSenha();
-		} 
-		else{
-			
-			FacesContext.getCurrentInstance().addMessage(
-					null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, sessao,
-							"Senha não alterada, digite a nova senha nos campos indicados"));
+		} else {
+
+			FacesContext
+					.getCurrentInstance()
+					.addMessage(
+							null,
+							new FacesMessage(FacesMessage.SEVERITY_ERROR,
+									sessao,
+									"Senha não alterada, digite a nova senha nos campos indicados"));
 		}
-		
-				
-		
+
 	}
+
 	public void messageAlteraSenha() {
 		FacesContext.getCurrentInstance().addMessage(
 				null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, sessao,
 						"Sua senha foi alterada com sucesso"));
-		
-		
 
 	}
 
@@ -192,7 +190,7 @@ public class UserBean implements Serializable {
 		return "/pages/admin/result_index.xhtml";
 
 	}
-	
+
 	public String reiniciarsessão() {
 		FacesContext.getCurrentInstance().addMessage(
 				null,
@@ -220,8 +218,8 @@ public class UserBean implements Serializable {
 						new FacesMessage(FacesMessage.SEVERITY_ERROR, "Login",
 								"Usuário/Senha incorretos, por favor, tente novamente"));
 		// remover sessão do manage bean selecionado
-//		FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
-//				.remove("userBean");
+		// FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+		// .remove("userBean");
 	}
 
 	public void nenhumUsuario() {
@@ -286,6 +284,22 @@ public class UserBean implements Serializable {
 
 	public String getSenhaTemporaria() {
 		return senhaTemporaria;
+	}
+
+	public List<SelectItem> getSetores() {
+		return setores;
+	}
+
+	public UserDao getUserDao() {
+		return userDao;
+	}
+
+	public void setSetores(List<SelectItem> setores) {
+		this.setores = setores;
+	}
+
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
 	public void setSenhaTemporaria(String senhaTemporaria) {
